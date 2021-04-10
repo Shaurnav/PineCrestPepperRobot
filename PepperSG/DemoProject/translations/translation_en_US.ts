@@ -32,10 +32,9 @@
     <context>
         <name>ImportedBehavior/behavior.xar:/Animated Say (1)</name>
         <message>
-            <location filename="ImportedBehavior/behavior.xar" line="0"/>
             <source>Hello</source>
             <comment>Text</comment>
-            <translation>Hello</translation>
+            <translation type="vanished">Hello</translation>
         </message>
     </context>
     <context>
