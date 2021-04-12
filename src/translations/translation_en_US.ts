@@ -17,10 +17,15 @@
             <translation type="obsolete">Mesame tamae, vaga aruyi taki yo</translation>
         </message>
         <message>
-            <location filename="Dialogue/behavior.xar" line="0"/>
             <source>I am waking up right now</source>
             <comment>Text</comment>
-            <translation type="unfinished">I am waking up right now</translation>
+            <translation type="obsolete">I am waking up right now</translation>
+        </message>
+        <message>
+            <location filename="Dialogue/behavior.xar" line="0"/>
+            <source>I'm waking up right now</source>
+            <comment>Text</comment>
+            <translation type="unfinished">I'm waking up right now</translation>
         </message>
     </context>
     <context>

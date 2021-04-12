@@ -5,10 +5,11 @@
         <BehaviorDescription name="behavior" src="FollowCome" xar="behavior.xar" />
         <BehaviorDescription name="behavior" src="Faces" xar="behavior.xar" />
         <BehaviorDescription name="behavior" src="Dialogue" xar="behavior.xar" />
+        <BehaviorDescription name="behavior" src="Presentation" xar="behavior.xar" />
     </BehaviorDescriptions>
     <Dialogs>
         <Dialog name="Dialogue_Sun" src="Dialogue_Sun/Dialogue_Sun.dlg" />
-        <Dialog name="Dialoge" src="Dialoge/Dialoge.dlg" />
+        <Dialog name="PresentationTopic" src="PresentationTopic/PresentationTopic.dlg" />
     </Dialogs>
     <Resources>
         <File name="SunImage" src="html/SunImage.png" />
@@ -16,7 +17,7 @@
     </Resources>
     <Topics>
         <Topic name="Dialogue_Sun_enu" src="Dialogue_Sun/Dialogue_Sun_enu.top" topicName="Dialogue_Sun" language="en_US" />
-        <Topic name="Dialoge_enu" src="Dialoge/Dialoge_enu.top" topicName="" language="" />
+        <Topic name="PresentationTopic_enu" src="PresentationTopic/PresentationTopic_enu.top" topicName="PresentationTopic" language="en_US" />
     </Topics>
     <IgnoredPaths />
     <Translations auto-fill="en_US">
