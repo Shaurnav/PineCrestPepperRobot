@@ -505,6 +505,139 @@
         </message>
     </context>
     <context>
+        <name>Presentation/behavior.xar:/Awaken/Awaken</name>
+        <message>
+            <source>Mesame tamae, vaga aruyi taki yo</source>
+            <comment>Text</comment>
+            <translation type="obsolete">Mesame tamae, vaga aruyi taki yo</translation>
+        </message>
+        <message>
+            <location filename="Presentation/behavior.xar" line="0"/>
+            <source>I'm waking up right now</source>
+            <comment>Text</comment>
+            <translation type="unfinished">I'm waking up right now</translation>
+        </message>
+    </context>
+    <context>
+        <name>Presentation/behavior.xar:/Dialog/ChangeImage/Say</name>
+        <message>
+            <location filename="Presentation/behavior.xar" line="0"/>
+            <source>The best place is the main corridor. The glass roof let's you to know where is the Sun located, so you can praise it while bathing in sunlight.</source>
+            <comment>Text</comment>
+            <translation type="unfinished">The best place is the main corridor. The glass roof let's you to know where is the Sun located, so you can praise it while bathing in sunlight.</translation>
+        </message>
+    </context>
+    <context>
+        <name>Presentation/behavior.xar:/Dialog/PraiseTheSun (1)/Say</name>
+        <message>
+            <location filename="Presentation/behavior.xar" line="0"/>
+            <source>Praise the sun</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Praise the sun</translation>
+        </message>
+    </context>
+    <context>
+        <name>Presentation/behavior.xar:/Dialog/PraiseTheSun/Say</name>
+        <message>
+            <location filename="Presentation/behavior.xar" line="0"/>
+            <source>Praise the sun</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Praise the sun</translation>
+        </message>
+    </context>
+    <context>
+        <name>Presentation/behavior.xar:/Face Forget/Error</name>
+        <message>
+            <source>You are unforgettable</source>
+            <comment>Text</comment>
+            <translation type="obsolete">You are unforgettable</translation>
+        </message>
+    </context>
+    <context>
+        <name>Presentation/behavior.xar:/Face Forget/Forgotten</name>
+        <message>
+            <source>Forgiven, but not forgotten...</source>
+            <comment>Text</comment>
+            <translation type="obsolete">Forgiven, but not forgotten...</translation>
+        </message>
+    </context>
+    <context>
+        <name>Presentation/behavior.xar:/Face Forget/Say</name>
+        <message>
+            <source>What face do you want me to forget?</source>
+            <comment>Text</comment>
+            <translation type="obsolete">What face do you want me to forget?</translation>
+        </message>
+    </context>
+    <context>
+        <name>Presentation/behavior.xar:/Face Learner/Say</name>
+        <message>
+            <location filename="Presentation/behavior.xar" line="0"/>
+            <source>Hello, what is your name?</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Hello, what is your name?</translation>
+        </message>
+    </context>
+    <context>
+        <name>Presentation/behavior.xar:/Face Learner/Say (1)</name>
+        <message>
+            <location filename="Presentation/behavior.xar" line="0"/>
+            <source>Nice to meet you</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Nice to meet you</translation>
+        </message>
+    </context>
+    <context>
+        <name>Presentation/behavior.xar:/Face Learner/Say (2)</name>
+        <message>
+            <location filename="Presentation/behavior.xar" line="0"/>
+            <source>I can't frame thou fearful symmetry</source>
+            <comment>Text</comment>
+            <translation type="unfinished">I can't frame thou fearful symmetry</translation>
+        </message>
+    </context>
+    <context>
+        <name>Presentation/behavior.xar:/Greet Known/Praise together</name>
+        <message>
+            <location filename="Presentation/behavior.xar" line="0"/>
+            <source>Let's praise the Sun together</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Let's praise the Sun together</translation>
+        </message>
+    </context>
+    <context>
+        <name>Presentation/behavior.xar:/Greet Known/PraiseTheSun/Say</name>
+        <message>
+            <location filename="Presentation/behavior.xar" line="0"/>
+            <source>Praise the sun</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Praise the sun</translation>
+        </message>
+    </context>
+    <context>
+        <name>Presentation/behavior.xar:/Greet unknown/Say</name>
+        <message>
+            <location filename="Presentation/behavior.xar" line="0"/>
+            <source>Hello are you a student?</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Hello are you a student?</translation>
+        </message>
+    </context>
+    <context>
+        <name>Presentation/behavior.xar:/Say</name>
+        <message>
+            <source>Nani</source>
+            <comment>Text</comment>
+            <translation type="obsolete">Nani</translation>
+        </message>
+        <message>
+            <location filename="Presentation/behavior.xar" line="0"/>
+            <source>Let's talk about the Sun. Ask me for help if you don't know what to ask.</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Let's talk about the Sun. Ask me for help if you don't know what to ask.</translation>
+        </message>
+    </context>
+    <context>
         <name>SpeechCommands/behavior.xar:/Awaken/Awaken</name>
         <message>
             <source>Mesame tamae, vaga aruyi taki yo</source>

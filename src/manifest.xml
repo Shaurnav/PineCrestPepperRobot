@@ -16,34 +16,25 @@
  <contents>
   <behaviorContent path="Faces">
    <nature>interactive</nature>
-   <triggerSentences/>
-   <loadingResponses/>
-   <autonomous/>
    <permissions/>
   </behaviorContent>
   <behaviorContent path="FollowCome">
    <nature>interactive</nature>
-   <triggerSentences/>
-   <loadingResponses/>
-   <autonomous/>
    <permissions/>
   </behaviorContent>
   <behaviorContent path="Dialogue">
    <nature>interactive</nature>
-   <triggerSentences/>
-   <loadingResponses/>
-   <autonomous/>
    <permissions/>
   </behaviorContent>
   <behaviorContent path="Presentation">
    <nature>interactive</nature>
    <permissions/>
   </behaviorContent>
-  <dialogContent topicName="Dialogue_Sun" typeVersion="1.0">
-   <topic path="Dialogue_Sun/Dialogue_Sun_enu.top" language="en_US"/>
+  <dialogContent typeVersion="1.0" topicName="Dialogue_Sun">
+   <topic language="en_US" path="Dialogue_Sun/Dialogue_Sun_enu.top"/>
   </dialogContent>
-  <dialogContent topicName="PresentationTopic" typeVersion="1.0">
-   <topic path="PresentationTopic/PresentationTopic_enu.top" language="en_US"/>
+  <dialogContent typeVersion="1.0" topicName="PresentationTopic">
+   <topic language="en_US" path="PresentationTopic/PresentationTopic_enu.top"/>
   </dialogContent>
  </contents>
  <requirements>
