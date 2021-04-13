@@ -11,9 +11,9 @@ concept:(farewell) [farewell bye "good bye" "see you"]
 # Replying to speech
 #u:(~hello) ~hello
 
-concept(happy) ["I feel great" "I love today"]
+concept:(happy) ["I feel great" "I love today"]
 
-u:(~happy) ~happy
+u:(~happy) Good to know that you are happy. I am happy too!
 
 u:([help "what can you do"]) I can talk you about: what is the Sun?, how to praise it? why should we praise it? and where can we praise it?
 

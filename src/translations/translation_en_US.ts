@@ -296,10 +296,15 @@
             <translation type="vanished">Hello</translation>
         </message>
         <message>
-            <location filename="Faces/behavior.xar" line="0"/>
             <source>Nani</source>
             <comment>Text</comment>
-            <translation type="unfinished">Nani</translation>
+            <translation type="obsolete">Nani</translation>
+        </message>
+        <message>
+            <location filename="Faces/behavior.xar" line="0"/>
+            <source>Ok bye</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Ok bye</translation>
         </message>
     </context>
     <context>
