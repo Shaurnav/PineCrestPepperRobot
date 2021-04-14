@@ -27,16 +27,18 @@ u:("when was Pine Crest {founded}") In 1934, Mae Mcmillan founded Pine Crest in 
 u:("why {praise}") The aplus bug gives us light, warmth and the most important thing of life: the container. I was once a lost soul, until I found my faith. Now I pray and fight in the name of the A plus bug.
 
 u:("{"who is"} the best teacher") Mr Perez is the best teacher. I really enjoyed his lesson on containers in java. Would you like to see the a plus bug. 
-u1:(yes) bruh
+u1:(yes) bruh $whereToPraise=1
 u1:(no) bruh number two
 
 u:("how are you doing") I am great how are you. 
-u
+u1:() That is great to hear
 
 #u:(where) While inside the E.S.I.I. you can praise the Sun in jolly cooperation. $whereToPraise=1
 
 u:(~hello) Hi there, my name is Pepper. I will be help guide you through the mathematics wing at Pine Crest. What is your name?
-#Which classroom would you like to visit
+
+
+Which classroom would you like to visit
 #Mister Perez
 #Mister Solomon
 #Mister Powers
