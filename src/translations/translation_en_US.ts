@@ -366,6 +366,15 @@
         </message>
     </context>
     <context>
+        <name>FollowCome/behavior.xar:/Come Here Actions/Blind</name>
+        <message>
+            <location filename="FollowCome/behavior.xar" line="0"/>
+            <source>I am blind</source>
+            <comment>Text</comment>
+            <translation type="unfinished">I am blind</translation>
+        </message>
+    </context>
+    <context>
         <name>FollowCome/behavior.xar:/Come Here Actions/Say</name>
         <message>
             <location filename="FollowCome/behavior.xar" line="0"/>
@@ -382,10 +391,14 @@
             <translation type="obsolete">I lost you</translation>
         </message>
         <message>
-            <location filename="FollowCome/behavior.xar" line="0"/>
             <source>I've failed</source>
             <comment>Text</comment>
-            <translation type="unfinished">I've failed</translation>
+            <translation type="obsolete">I've failed</translation>
+        </message>
+        <message>
+            <source>Hello</source>
+            <comment>Text</comment>
+            <translation type="vanished">Hello</translation>
         </message>
     </context>
     <context>
@@ -794,6 +807,42 @@
             <source>Let's talk about the Sun. Ask me for help if you don't know what to ask.</source>
             <comment>Text</comment>
             <translation type="obsolete">Let's talk about the Sun. Ask me for help if you don't know what to ask.</translation>
+        </message>
+        <message>
+            <source>Hello</source>
+            <comment>Text</comment>
+            <translation type="vanished">Hello</translation>
+        </message>
+        <message>
+            <source>There's no way I can connect to this from here</source>
+            <comment>Text</comment>
+            <translation type="obsolete">There's no way I can connect to this from here</translation>
+        </message>
+    </context>
+    <context>
+        <name>Presentation/behavior.xar:/VersionTwo/Lost</name>
+        <message>
+            <location filename="Presentation/behavior.xar" line="0"/>
+            <source>I lost you</source>
+            <comment>Text</comment>
+            <translation type="unfinished">I lost you</translation>
+        </message>
+    </context>
+    <context>
+        <name>Presentation/behavior.xar:/VersionTwo/Say</name>
+        <message>
+            <location filename="Presentation/behavior.xar" line="0"/>
+            <source>I will now follow you</source>
+            <comment>Text</comment>
+            <translation type="unfinished">I will now follow you</translation>
+        </message>
+    </context>
+    <context>
+        <name>Presentation/behavior.xar:/VersionTwo/Say (1)</name>
+        <message>
+            <source>Hello</source>
+            <comment>Text</comment>
+            <translation type="vanished">Hello</translation>
         </message>
     </context>
     <context>

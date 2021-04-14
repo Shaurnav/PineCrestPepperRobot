@@ -80,138 +80,7 @@ class MyClass(GeneratedClass):
                 self.bIsRunning = False
 
     def onInput_onStop(self):
-        self.onUnload()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this Input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this Input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when Box behavior is finished." id="4" /><Parameter name="Voice shaping (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="150" tooltip='Used to modify at runtime the voice feature (tone, speed). In a slighty&#x0A;different way than pitch and speed, it gives a kind of &quot;gender or age&#x0A;modification&quot; effect.&#x0A;&#x0A;For instance, a quite good male derivation of female voice can be&#x0A;obtained setting this parameter to 78%.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the&#x0A;speed parameter. For example, if you want to decrease by 20% the voice&#x0A;shaping, you will have to increase by 20% the speed to keep a constant&#x0A;average speed.' id="5" /><Parameter name="Speed (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="200" tooltip="Changes the speed of the voice.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the voice&#x0A;shaping parameter. For example, if you want to increase by 20% the speed, you&#x0A;will have to decrease by 20% the voice shaping to keep a constant average&#x0A;speed." id="6" /><Parameter name="Text" inherits_from_parent="0" content_type="5" value="Say stop to... stop?" default_value="" tooltip="The text you want to say. Don&apos;t forget to translate it!" id="7" /></Box><Box name="Face Tracker" id="12" localization="-1" tooltip="This box makes the robot track a face with different modes." x="577" y="82"><bitmap>media/images/box/interaction/target_face.png</bitmap><script language="4"><content><![CDATA[import time
-
-class MyClass(GeneratedClass):
-    def __init__(self):
-        GeneratedClass.__init__(self)
-        self.tracker = ALProxy( "ALTracker" )
-        self.memory = ALProxy("ALMemory")
-        self.targetName = "Face"
-        self.distanceX = 0.0
-        self.distanceY = 0.0
-        self.angleWz = 0.0
-        self.thresholdX = 0.0
-        self.thresholdY = 0.0
-        self.thresholdWz = 0.0
-        self.subscribeDone = False
-        self.effector = "None"
-        self.isRunning = False
-
-    def onLoad(self):
-        self.BIND_PYTHON(self.getName(), "setParameter")
-        self.BIND_PYTHON(self.getName(), "onTargetLost")
-        self.BIND_PYTHON(self.getName(), "onTargetReached")
-        self.BIND_PYTHON(self.getName(), "onTargetChanged")
-        self.memory.subscribeToEvent("ALTracker/ActiveTargetChanged", self.getName(), "onTargetChanged")
-
-    def onUnload(self):
-        if self.subscribeDone:
-            self.memory.unsubscribeToEvent("ALTracker/TargetLost", self.getName())
-            self.memory.unsubscribeToEvent("ALTracker/TargetReached", self.getName())
-            self.subscribeDone = False
-
-        if self.isRunning:
-            self.tracker.setEffector("None")
-            self.tracker.stopTracker()
-            self.tracker.unregisterTarget(self.targetName)
-            self.isRunning = False
-
-    def onInput_onStart(self):
-        self.memory.subscribeToEvent("ALTracker/TargetLost", self.getName(), "onTargetLost")
-        self.memory.subscribeToEvent("ALTracker/TargetReached", self.getName(), "onTargetReached")
-        self.subscribeDone = True
-
-        mode = self.getParameter("Mode")
-        width = self.getParameter("Width (m)")
-        self.distanceX = self.getParameter("Distance X (m)")
-        self.thresholdX = self.getParameter("Threshold X (m)")
-        self.distanceY = self.getParameter("Distance Y (m)")
-        self.thresholdY = self.getParameter("Threshold Y (m)")
-        self.angleWz = self.getParameter("Theta (rad)")
-        self.thresholdWz = self.getParameter("Threshold Theta (rad)")
-        self.effector = self.getParameter("Effector")
-
-        self.tracker.setEffector(self.effector)
-
-        self.tracker.registerTarget(self.targetName, width)
-        self.tracker.setRelativePosition([-self.distanceX, self.distanceY, self.angleWz,
-                                           self.thresholdX, self.thresholdY, self.thresholdWz])
-        self.tracker.setMode(mode)
-
-        self.tracker.track(self.targetName) #Start tracker
-        self.isRunning = True
-
-    def onInput_onStop(self):
-        self.onStopped()
-        self.onUnload()
-
-    def setParameter(self, parameterName, newValue):
-        GeneratedClass.setParameter(self, parameterName, newValue)
-        if (parameterName == "Mode"):
-            self.tracker.setMode(newValue)
-            return
-
-        if (parameterName == "Width (m)"):
-            self.tracker.registerTarget(self.targetName, newValue)
-            return
-
-        if (parameterName == "Distance X (m)"):
-            self.distanceX = newValue
-            self.tracker.setRelativePosition([-self.distanceX, self.distanceY, self.angleWz,
-                                               self.thresholdX, self.thresholdY, self.thresholdWz])
-            return
-
-        if (parameterName == "Distance Y (m)"):
-            self.distanceY = newValue
-            self.tracker.setRelativePosition([-self.distanceX, self.distanceY, self.angleWz,
-                                               self.thresholdX, self.thresholdY, self.thresholdWz])
-            return
-
-        if (parameterName == "Theta (rad)"):
-            self.angleWz = newValue
-            self.tracker.setRelativePosition([-self.distanceX, self.distanceY, self.angleWz,
-                                               self.thresholdX, self.thresholdY, self.thresholdWz])
-            return
-
-        if (parameterName == "Threshold X (m)"):
-            self.thresholdX = newValue
-            self.tracker.setRelativePosition([-self.distanceX, self.distanceY, self.angleWz,
-                                               self.thresholdX, self.thresholdY, self.thresholdWz])
-            return
-
-        if (parameterName == "Threshold Y (m)"):
-            self.thresholdY = newValue
-            self.tracker.setRelativePosition([-self.distanceX, self.distanceY, self.angleWz,
-                                               self.thresholdX, self.thresholdY, self.thresholdWz])
-            return
-
-        if (parameterName == "Threshold Theta (rad)"):
-            self.thresholdWz = newValue
-            self.tracker.setRelativePosition([-self.distanceX, self.distanceY, self.angleWz,
-                                               self.thresholdX, self.thresholdY, self.thresholdWz])
-            return
-
-        if(parameterName == "Effector"):
-            self.tracker.setEffector(newValue)
-            self.effector = newValue
-            return
-
-    def onTargetLost(self, key, value, message):
-        self.targetLost()
-
-    def onTargetReached(self, key, value, message):
-        self.targetReached()
-
-    def onTargetChanged(self, key, value, message):
-        if value == self.targetName and not self.subscribeDone:
-            self.memory.subscribeToEvent("ALTracker/TargetLost", self.getName(), "onTargetLost")
-            self.memory.subscribeToEvent("ALTracker/TargetReached", self.getName(), "onTargetReached")
-            self.subscribeDone = True
-        elif value != self.targetName and self.subscribeDone:
-            self.memory.unsubscribeToEvent("ALTracker/TargetLost", self.getName())
-            self.memory.unsubscribeToEvent("ALTracker/TargetReached", self.getName())
-            self.subscribeDone = False]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Output name="targetLost" type="1" type_size="1" nature="2" inner="0" tooltip="Signal sent when the target is lost." id="5" /><Output name="targetReached" type="1" type_size="1" nature="2" inner="0" tooltip="Signal sent when the target is reached." id="6" /><Parameter name="Mode" inherits_from_parent="0" content_type="3" value="Move" default_value="Head" custom_choice="0" tooltip="Set tracker mode" id="7"><Choice value="Head" /><Choice value="WholeBody" /><Choice value="Move" /></Parameter><Parameter name="Effector" inherits_from_parent="0" content_type="3" value="None" default_value="None" custom_choice="0" tooltip="Set effector to use for tracking. Head is always used." id="8"><Choice value="None" /><Choice value="Arms" /><Choice value="LArm" /><Choice value="RArm" /></Parameter><Parameter name="Width (m)" inherits_from_parent="0" content_type="2" value="0.1" default_value="0.1" min="0.01" max="0.6" tooltip="Width of the face in meters" id="9" /><Parameter name="Distance X (m)" inherits_from_parent="0" content_type="2" value="0.3" default_value="0.3" min="0.01" max="5" tooltip="Distance on X axis the robot will try to maintain from its target in move modes." id="10" /><Parameter name="Threshold X (m)" inherits_from_parent="0" content_type="2" value="0.1" default_value="0.1" min="0.01" max="1" tooltip="Threshold above which the robot will move to track its target in move modes." id="11" /><Parameter name="Distance Y (m)" inherits_from_parent="0" content_type="2" value="0" default_value="0" min="-5" max="5" tooltip="Distance on Y axis the robot will try to maintain from its target in move modes." id="12" /><Parameter name="Threshold Y (m)" inherits_from_parent="0" content_type="2" value="0.1" default_value="0.1" min="0.01" max="1" tooltip="Threshold above which the robot will move to track its target in move modes." id="13" /><Parameter name="Theta (rad)" inherits_from_parent="0" content_type="2" value="0" default_value="0" min="-3.14" max="3.14" tooltip="Wz angle of the vector robot-target the robot will try to maintain in move modes." id="14" /><Parameter name="Threshold Theta (rad)" inherits_from_parent="0" content_type="2" value="0.3" default_value="0.3" min="0" max="3.14" tooltip="Threshold of the angle of the vector robot-target above which the robot will move to track its target in move modes." id="15" /></Box><Box name="Speech Reco." id="1" localization="8" tooltip="Recognize a word from a list of words set in the box parameters.&#x0A;&#x0A;V1.1.0&#x0A;" x="241" y="260"><bitmap>media/images/box/interaction/ear.png</bitmap><script language="4"><content><![CDATA[
+        self.onUnload()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this Input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this Input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when Box behavior is finished." id="4" /><Parameter name="Voice shaping (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="150" tooltip='Used to modify at runtime the voice feature (tone, speed). In a slighty&#x0A;different way than pitch and speed, it gives a kind of &quot;gender or age&#x0A;modification&quot; effect.&#x0A;&#x0A;For instance, a quite good male derivation of female voice can be&#x0A;obtained setting this parameter to 78%.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the&#x0A;speed parameter. For example, if you want to decrease by 20% the voice&#x0A;shaping, you will have to increase by 20% the speed to keep a constant&#x0A;average speed.' id="5" /><Parameter name="Speed (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="200" tooltip="Changes the speed of the voice.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the voice&#x0A;shaping parameter. For example, if you want to increase by 20% the speed, you&#x0A;will have to decrease by 20% the voice shaping to keep a constant average&#x0A;speed." id="6" /><Parameter name="Text" inherits_from_parent="0" content_type="5" value="Say stop to... stop?" default_value="" tooltip="The text you want to say. Don&apos;t forget to translate it!" id="7" /></Box><Box name="Speech Reco." id="1" localization="8" tooltip="Recognize a word from a list of words set in the box parameters.&#x0A;&#x0A;V1.1.0&#x0A;" x="241" y="260"><bitmap>media/images/box/interaction/ear.png</bitmap><script language="4"><content><![CDATA[
 
 class MyClass(GeneratedClass):
     def __init__(self):
@@ -341,7 +210,141 @@ class MyClass(GeneratedClass):
                 self.bIsRunning = False
 
     def onInput_onStop(self):
-        self.onUnload()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this Input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this Input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when Box behavior is finished." id="4" /><Parameter name="Voice shaping (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="150" tooltip='Used to modify at runtime the voice feature (tone, speed). In a slighty&#x0A;different way than pitch and speed, it gives a kind of &quot;gender or age&#x0A;modification&quot; effect.&#x0A;&#x0A;For instance, a quite good male derivation of female voice can be&#x0A;obtained setting this parameter to 78%.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the&#x0A;speed parameter. For example, if you want to decrease by 20% the voice&#x0A;shaping, you will have to increase by 20% the speed to keep a constant&#x0A;average speed.' id="5" /><Parameter name="Speed (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="200" tooltip="Changes the speed of the voice.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the voice&#x0A;shaping parameter. For example, if you want to increase by 20% the speed, you&#x0A;will have to decrease by 20% the voice shaping to keep a constant average&#x0A;speed." id="6" /><Parameter name="Text" inherits_from_parent="0" content_type="5" value="I&apos;m going to stop because I want to, not because you told me." default_value="" tooltip="The text you want to say. Don&apos;t forget to translate it!" id="7" /></Box><Link inputowner="12" indexofinput="2" outputowner="7" indexofoutput="4" /><Link inputowner="7" indexofinput="2" outputowner="0" indexofoutput="2" /><Link inputowner="1" indexofinput="2" outputowner="7" indexofoutput="4" /><Link inputowner="2" indexofinput="2" outputowner="1" indexofoutput="5" /><Link inputowner="1" indexofinput="3" outputowner="2" indexofoutput="4" /><Link inputowner="12" indexofinput="3" outputowner="2" indexofoutput="4" /><Link inputowner="3" indexofinput="2" outputowner="12" indexofoutput="4" /><Link inputowner="0" indexofinput="4" outputowner="3" indexofoutput="4" /><Link inputowner="12" indexofinput="2" outputowner="12" indexofoutput="5" /></Diagram></BehaviorKeyframe></BehaviorLayer></Timeline></Box><Box name="FaceAndSpeech" id="6" localization="8" tooltip="Tracks faces and does speech recognition tasks." x="319" y="359"><bitmap>media/images/box/box-diagram.png</bitmap><script language="4"><content><![CDATA[]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Output name="FollowMe" type="1" type_size="1" nature="2" inner="0" tooltip="" id="5" /><Output name="ComeHere" type="1" type_size="1" nature="2" inner="0" tooltip="" id="6" /><Output name="End" type="1" type_size="1" nature="2" inner="0" tooltip="" id="7" /><Timeline enable="0"><BehaviorLayer name="behavior_layer1"><BehaviorKeyframe name="keyframe1" index="1"><Diagram><Box name="Speech Reco." id="3" localization="8" tooltip="Recognize a word from a list of words set in the box parameters.&#x0A;&#x0A;V1.1.0&#x0A;" x="380" y="301"><bitmap>media/images/box/interaction/ear.png</bitmap><script language="4"><content><![CDATA[
+        self.onUnload()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this Input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this Input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when Box behavior is finished." id="4" /><Parameter name="Voice shaping (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="150" tooltip='Used to modify at runtime the voice feature (tone, speed). In a slighty&#x0A;different way than pitch and speed, it gives a kind of &quot;gender or age&#x0A;modification&quot; effect.&#x0A;&#x0A;For instance, a quite good male derivation of female voice can be&#x0A;obtained setting this parameter to 78%.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the&#x0A;speed parameter. For example, if you want to decrease by 20% the voice&#x0A;shaping, you will have to increase by 20% the speed to keep a constant&#x0A;average speed.' id="5" /><Parameter name="Speed (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="200" tooltip="Changes the speed of the voice.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the voice&#x0A;shaping parameter. For example, if you want to increase by 20% the speed, you&#x0A;will have to decrease by 20% the voice shaping to keep a constant average&#x0A;speed." id="6" /><Parameter name="Text" inherits_from_parent="0" content_type="5" value="I&apos;m going to stop because I want to, not because you told me." default_value="" tooltip="The text you want to say. Don&apos;t forget to translate it!" id="7" /></Box><Box name="People Tracker" id="4" localization="-1" tooltip="This box makes the robot track people with different modes." x="615" y="60"><bitmap>media/images/box/interaction/target_face.png</bitmap><script language="4"><content><![CDATA[import time
+
+class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+        self.tracker = ALProxy( "ALTracker" )
+        self.memory = ALProxy("ALMemory")
+        self.targetName = "People"
+        self.distanceX = 0.0
+        self.distanceY = 0.0
+        self.angleWz = 0.0
+        self.thresholdX = 0.0
+        self.thresholdY = 0.0
+        self.thresholdWz = 0.0
+        self.effector = "None"
+        self.subscribeDone = False
+        self.isRunning = False
+
+    def onLoad(self):
+        self.BIND_PYTHON(self.getName(), "setParameter")
+        self.BIND_PYTHON(self.getName(), "onTargetLost")
+        self.BIND_PYTHON(self.getName(), "onTargetReached")
+        self.BIND_PYTHON(self.getName(), "onTargetChanged")
+        self.memory.subscribeToEvent("ALTracker/ActiveTargetChanged", self.getName(), "onTargetChanged")
+
+    def onUnload(self):
+        if self.subscribeDone:
+            self.memory.unsubscribeToEvent("ALTracker/TargetLost", self.getName())
+            self.memory.unsubscribeToEvent("ALTracker/TargetReached", self.getName())
+            self.subscribeDone = False
+
+        if self.isRunning:
+            self.tracker.setEffector("None")
+            self.tracker.stopTracker()
+            self.tracker.unregisterTarget(self.targetName)
+            self.isRunning = False
+
+    def onInput_onStart(self):
+        self.memory.subscribeToEvent("ALTracker/TargetLost", self.getName(), "onTargetLost")
+        self.memory.subscribeToEvent("ALTracker/TargetReached", self.getName(), "onTargetReached")
+        self.subscribeDone = True
+
+        mode = self.getParameter("Mode")
+        self.distanceX = self.getParameter("Distance X (m)")
+        self.thresholdX = self.getParameter("Threshold X (m)")
+        self.distanceY = self.getParameter("Distance Y (m)")
+        self.thresholdY = self.getParameter("Threshold Y (m)")
+        self.angleWz = self.getParameter("Theta (rad)")
+        self.thresholdWz = self.getParameter("Threshold Theta (rad)")
+        self.effector = self.getParameter("Effector")
+
+        self.tracker.setEffector(self.effector)
+
+        peopleIds = []
+
+        self.tracker.registerTarget(self.targetName, peopleIds)
+        self.tracker.setRelativePosition([-self.distanceX, self.distanceY, self.angleWz,
+                                           self.thresholdX, self.thresholdY, self.thresholdWz])
+        self.tracker.setMode(mode)
+
+        self.tracker.track(self.targetName) #Start tracker
+        self.isRunning = True
+
+    def onInput_onStop(self):
+        self.onStopped()
+        self.onUnload()
+
+    def onInput_peopleId(self, p):
+        if(p is None):
+            return
+
+        self.tracker.registerTarget(self.targetName, p)
+
+    def setParameter(self, parameterName, newValue):
+        GeneratedClass.setParameter(self, parameterName, newValue)
+        if (parameterName == 'Mode'):
+            self.tracker.setMode(newValue)
+            return
+
+        if (parameterName == "Distance X (m)"):
+            self.distanceX = newValue
+            self.tracker.setRelativePosition([-self.distanceX, self.distanceY, self.angleWz,
+                                               self.thresholdX, self.thresholdY, self.thresholdWz])
+            return
+
+        if (parameterName == "Distance Y (m)"):
+            self.distanceY = newValue
+            self.tracker.setRelativePosition([-self.distanceX, self.distanceY, self.angleWz,
+                                               self.thresholdX, self.thresholdY, self.thresholdWz])
+            return
+
+        if (parameterName == "Theta (rad)"):
+            self.angleWz = newValue
+            self.tracker.setRelativePosition([-self.distanceX, self.distanceY, self.angleWz,
+                                               self.thresholdX, self.thresholdY, self.thresholdWz])
+            return
+
+        if (parameterName == "Threshold X (m)"):
+            self.thresholdX = newValue
+            self.tracker.setRelativePosition([-self.distanceX, self.distanceY, self.angleWz,
+                                               self.thresholdX, self.thresholdY, self.thresholdWz])
+            return
+
+        if (parameterName == "Threshold Y (m)"):
+            self.thresholdY = newValue
+            self.tracker.setRelativePosition([-self.distanceX, self.distanceY, self.angleWz,
+                                               self.thresholdX, self.thresholdY, self.thresholdWz])
+            return
+
+        if (parameterName == "Threshold Theta (rad)"):
+            self.thresholdWz = newValue
+            self.tracker.setRelativePosition([-self.distanceX, self.distanceY, self.angleWz,
+                                               self.thresholdX, self.thresholdY, self.thresholdWz])
+            return
+
+        if(parameterName == "Effector"):
+            self.tracker.setEffector(newValue)
+            self.effector = newValue
+            return
+
+    def onTargetLost(self, key, value, message):
+        self.targetLost()
+
+    def onTargetReached(self, key, value, message):
+        self.targetReached()
+
+    def onTargetChanged(self, key, value, message):
+        if value == self.targetName and not self.subscribeDone:
+            self.memory.subscribeToEvent("ALTracker/TargetLost", self.getName(), "onTargetLost")
+            self.memory.subscribeToEvent("ALTracker/TargetReached", self.getName(), "onTargetReached")
+            self.subscribeDone = True
+        elif value != self.targetName and self.subscribeDone:
+            self.memory.unsubscribeToEvent("ALTracker/TargetLost", self.getName())
+            self.memory.unsubscribeToEvent("ALTracker/TargetReached", self.getName())
+            self.subscribeDone = False]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Input name="peopleId" type="0" type_size="1" nature="1" inner="0" tooltip="List of people id to track" id="4" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="5" /><Output name="targetLost" type="1" type_size="1" nature="2" inner="0" tooltip="Signal sent when the target is lost." id="6" /><Output name="targetReached" type="1" type_size="1" nature="2" inner="0" tooltip="Signal sent when the target is reached." id="7" /><Parameter name="Mode" inherits_from_parent="0" content_type="3" value="Move" default_value="Head" custom_choice="0" tooltip="Set tracker mode" id="8"><Choice value="Head" /><Choice value="WholeBody" /><Choice value="Move" /></Parameter><Parameter name="Effector" inherits_from_parent="0" content_type="3" value="None" default_value="None" custom_choice="0" tooltip="Set effector to use for tracking. Head is always used." id="9"><Choice value="None" /><Choice value="Arms" /><Choice value="LArm" /><Choice value="RArm" /></Parameter><Parameter name="Distance X (m)" inherits_from_parent="0" content_type="2" value="0.3" default_value="0.3" min="0.01" max="5" tooltip="Distance on X axis the robot will try to maintain from its target in move modes." id="10" /><Parameter name="Threshold X (m)" inherits_from_parent="0" content_type="2" value="0.1" default_value="0.1" min="0.01" max="1" tooltip="Threshold above which the robot will move to track its target in move modes." id="11" /><Parameter name="Distance Y (m)" inherits_from_parent="0" content_type="2" value="0" default_value="0" min="-5" max="5" tooltip="Distance on Y axis the robot will try to maintain from its target in move modes." id="12" /><Parameter name="Threshold Y (m)" inherits_from_parent="0" content_type="2" value="0.1" default_value="0.1" min="0.01" max="1" tooltip="Threshold above which the robot will move to track its target in move modes." id="13" /><Parameter name="Theta (rad)" inherits_from_parent="0" content_type="2" value="0" default_value="0" min="-3.14" max="3.14" tooltip="Wz angle of the vector robot-target the robot will try to maintain in move modes." id="14" /><Parameter name="Threshold Theta (rad)" inherits_from_parent="0" content_type="2" value="0.3" default_value="0.3" min="0.01" max="3.14" tooltip="Threshold of the angle of the vector robot-target above which the robot will move to track its target in move modes." id="15" /></Box><Link inputowner="7" indexofinput="2" outputowner="0" indexofoutput="2" /><Link inputowner="1" indexofinput="2" outputowner="7" indexofoutput="4" /><Link inputowner="2" indexofinput="2" outputowner="1" indexofoutput="5" /><Link inputowner="1" indexofinput="3" outputowner="2" indexofoutput="4" /><Link inputowner="0" indexofinput="4" outputowner="3" indexofoutput="4" /><Link inputowner="4" indexofinput="2" outputowner="7" indexofoutput="4" /><Link inputowner="4" indexofinput="3" outputowner="2" indexofoutput="4" /><Link inputowner="4" indexofinput="2" outputowner="4" indexofoutput="6" /><Link inputowner="3" indexofinput="2" outputowner="4" indexofoutput="5" /></Diagram></BehaviorKeyframe></BehaviorLayer></Timeline></Box><Box name="FaceAndSpeech" id="6" localization="8" tooltip="Tracks faces and does speech recognition tasks." x="319" y="359"><bitmap>media/images/box/box-diagram.png</bitmap><script language="4"><content><![CDATA[]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Output name="FollowMe" type="1" type_size="1" nature="2" inner="0" tooltip="" id="5" /><Output name="ComeHere" type="1" type_size="1" nature="2" inner="0" tooltip="" id="6" /><Output name="End" type="1" type_size="1" nature="2" inner="0" tooltip="" id="7" /><Timeline enable="0"><BehaviorLayer name="behavior_layer1"><BehaviorKeyframe name="keyframe1" index="1"><Diagram><Box name="Speech Reco." id="3" localization="8" tooltip="Recognize a word from a list of words set in the box parameters.&#x0A;&#x0A;V1.1.0&#x0A;" x="380" y="301"><bitmap>media/images/box/interaction/ear.png</bitmap><script language="4"><content><![CDATA[
 
 class MyClass(GeneratedClass):
     def __init__(self):
@@ -606,7 +609,7 @@ class MyClass(GeneratedClass):
                 self.bIsRunning = False
 
     def onInput_onStop(self):
-        self.onUnload()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this Input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this Input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when Box behavior is finished." id="4" /><Parameter name="Voice shaping (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="150" tooltip='Used to modify at runtime the voice feature (tone, speed). In a slighty&#x0A;different way than pitch and speed, it gives a kind of &quot;gender or age&#x0A;modification&quot; effect.&#x0A;&#x0A;For instance, a quite good male derivation of female voice can be&#x0A;obtained setting this parameter to 78%.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the&#x0A;speed parameter. For example, if you want to decrease by 20% the voice&#x0A;shaping, you will have to increase by 20% the speed to keep a constant&#x0A;average speed.' id="5" /><Parameter name="Speed (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="200" tooltip="Changes the speed of the voice.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the voice&#x0A;shaping parameter. For example, if you want to increase by 20% the speed, you&#x0A;will have to decrease by 20% the voice shaping to keep a constant average&#x0A;speed." id="6" /><Parameter name="Text" inherits_from_parent="0" content_type="5" value="Hot stuff, comin&apos; through!" default_value="" tooltip="The text you want to say. Don&apos;t forget to translate it!" id="7" /></Box><Box name="Face Tracker" id="12" localization="-1" tooltip="This box makes the robot track a face with different modes." x="289" y="437"><bitmap>media/images/box/interaction/target_face.png</bitmap><script language="4"><content><![CDATA[import time
+        self.onUnload()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this Input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this Input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when Box behavior is finished." id="4" /><Parameter name="Voice shaping (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="150" tooltip='Used to modify at runtime the voice feature (tone, speed). In a slighty&#x0A;different way than pitch and speed, it gives a kind of &quot;gender or age&#x0A;modification&quot; effect.&#x0A;&#x0A;For instance, a quite good male derivation of female voice can be&#x0A;obtained setting this parameter to 78%.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the&#x0A;speed parameter. For example, if you want to decrease by 20% the voice&#x0A;shaping, you will have to increase by 20% the speed to keep a constant&#x0A;average speed.' id="5" /><Parameter name="Speed (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="200" tooltip="Changes the speed of the voice.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the voice&#x0A;shaping parameter. For example, if you want to increase by 20% the speed, you&#x0A;will have to decrease by 20% the voice shaping to keep a constant average&#x0A;speed." id="6" /><Parameter name="Text" inherits_from_parent="0" content_type="5" value="Hot stuff, comin&apos; through!" default_value="" tooltip="The text you want to say. Don&apos;t forget to translate it!" id="7" /></Box><Box name="Face Tracker" id="12" localization="-1" tooltip="This box makes the robot track a face with different modes." x="362" y="183"><bitmap>media/images/box/interaction/target_face.png</bitmap><script language="4"><content><![CDATA[import time
 
 class MyClass(GeneratedClass):
     def __init__(self):
@@ -737,7 +740,7 @@ class MyClass(GeneratedClass):
         elif value != self.targetName and self.subscribeDone:
             self.memory.unsubscribeToEvent("ALTracker/TargetLost", self.getName())
             self.memory.unsubscribeToEvent("ALTracker/TargetReached", self.getName())
-            self.subscribeDone = False]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Output name="targetLost" type="1" type_size="1" nature="2" inner="0" tooltip="Signal sent when the target is lost." id="5" /><Output name="targetReached" type="1" type_size="1" nature="2" inner="0" tooltip="Signal sent when the target is reached." id="6" /><Parameter name="Mode" inherits_from_parent="0" content_type="3" value="Move" default_value="Head" custom_choice="0" tooltip="Set tracker mode" id="7"><Choice value="Head" /><Choice value="WholeBody" /><Choice value="Move" /></Parameter><Parameter name="Effector" inherits_from_parent="0" content_type="3" value="None" default_value="None" custom_choice="0" tooltip="Set effector to use for tracking. Head is always used." id="8"><Choice value="None" /><Choice value="Arms" /><Choice value="LArm" /><Choice value="RArm" /></Parameter><Parameter name="Width (m)" inherits_from_parent="0" content_type="2" value="0.1" default_value="0.1" min="0.01" max="0.6" tooltip="Width of the face in meters" id="9" /><Parameter name="Distance X (m)" inherits_from_parent="0" content_type="2" value="0.3" default_value="0.3" min="0.01" max="5" tooltip="Distance on X axis the robot will try to maintain from its target in move modes." id="10" /><Parameter name="Threshold X (m)" inherits_from_parent="0" content_type="2" value="0.1" default_value="0.1" min="0.01" max="1" tooltip="Threshold above which the robot will move to track its target in move modes." id="11" /><Parameter name="Distance Y (m)" inherits_from_parent="0" content_type="2" value="0" default_value="0" min="-5" max="5" tooltip="Distance on Y axis the robot will try to maintain from its target in move modes." id="12" /><Parameter name="Threshold Y (m)" inherits_from_parent="0" content_type="2" value="0.1" default_value="0.1" min="0.01" max="1" tooltip="Threshold above which the robot will move to track its target in move modes." id="13" /><Parameter name="Theta (rad)" inherits_from_parent="0" content_type="2" value="0" default_value="0" min="-3.14" max="3.14" tooltip="Wz angle of the vector robot-target the robot will try to maintain in move modes." id="14" /><Parameter name="Threshold Theta (rad)" inherits_from_parent="0" content_type="2" value="0.3" default_value="0.3" min="0" max="3.14" tooltip="Threshold of the angle of the vector robot-target above which the robot will move to track its target in move modes." id="15" /></Box><Box name="Say (2)" id="1" localization="8" tooltip="Say some text. The text can be localized." x="622" y="135"><bitmap>media/images/box/interaction/say.png</bitmap><script language="4"><content><![CDATA[import time
+            self.subscribeDone = False]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Output name="targetLost" type="1" type_size="1" nature="2" inner="0" tooltip="Signal sent when the target is lost." id="5" /><Output name="targetReached" type="1" type_size="1" nature="2" inner="0" tooltip="Signal sent when the target is reached." id="6" /><Parameter name="Mode" inherits_from_parent="0" content_type="3" value="Move" default_value="Head" custom_choice="0" tooltip="Set tracker mode" id="7"><Choice value="Head" /><Choice value="WholeBody" /><Choice value="Move" /></Parameter><Parameter name="Effector" inherits_from_parent="0" content_type="3" value="None" default_value="None" custom_choice="0" tooltip="Set effector to use for tracking. Head is always used." id="8"><Choice value="None" /><Choice value="Arms" /><Choice value="LArm" /><Choice value="RArm" /></Parameter><Parameter name="Width (m)" inherits_from_parent="0" content_type="2" value="0.1" default_value="0.1" min="0.01" max="0.6" tooltip="Width of the face in meters" id="9" /><Parameter name="Distance X (m)" inherits_from_parent="0" content_type="2" value="0.3" default_value="0.3" min="0.01" max="5" tooltip="Distance on X axis the robot will try to maintain from its target in move modes." id="10" /><Parameter name="Threshold X (m)" inherits_from_parent="0" content_type="2" value="0.1" default_value="0.1" min="0.01" max="1" tooltip="Threshold above which the robot will move to track its target in move modes." id="11" /><Parameter name="Distance Y (m)" inherits_from_parent="0" content_type="2" value="0" default_value="0" min="-5" max="5" tooltip="Distance on Y axis the robot will try to maintain from its target in move modes." id="12" /><Parameter name="Threshold Y (m)" inherits_from_parent="0" content_type="2" value="0.1" default_value="0.1" min="0.01" max="1" tooltip="Threshold above which the robot will move to track its target in move modes." id="13" /><Parameter name="Theta (rad)" inherits_from_parent="0" content_type="2" value="0" default_value="0" min="-3.14" max="3.14" tooltip="Wz angle of the vector robot-target the robot will try to maintain in move modes." id="14" /><Parameter name="Threshold Theta (rad)" inherits_from_parent="0" content_type="2" value="0.3" default_value="0.3" min="0" max="3.14" tooltip="Threshold of the angle of the vector robot-target above which the robot will move to track its target in move modes." id="15" /></Box><Box name="Say (2)" id="1" localization="8" tooltip="Say some text. The text can be localized." x="527" y="90"><bitmap>media/images/box/interaction/say.png</bitmap><script language="4"><content><![CDATA[import time
 
 class MyClass(GeneratedClass):
     def __init__(self):
@@ -778,7 +781,180 @@ class MyClass(GeneratedClass):
                 self.bIsRunning = False
 
     def onInput_onStop(self):
-        self.onUnload()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this Input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this Input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when Box behavior is finished." id="4" /><Parameter name="Voice shaping (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="150" tooltip='Used to modify at runtime the voice feature (tone, speed). In a slighty&#x0A;different way than pitch and speed, it gives a kind of &quot;gender or age&#x0A;modification&quot; effect.&#x0A;&#x0A;For instance, a quite good male derivation of female voice can be&#x0A;obtained setting this parameter to 78%.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the&#x0A;speed parameter. For example, if you want to decrease by 20% the voice&#x0A;shaping, you will have to increase by 20% the speed to keep a constant&#x0A;average speed.' id="5" /><Parameter name="Speed (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="200" tooltip="Changes the speed of the voice.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the voice&#x0A;shaping parameter. For example, if you want to increase by 20% the speed, you&#x0A;will have to decrease by 20% the voice shaping to keep a constant average&#x0A;speed." id="6" /><Parameter name="Text" inherits_from_parent="0" content_type="5" value="I&apos;m here" default_value="" tooltip="The text you want to say. Don&apos;t forget to translate it!" id="7" /></Box><Box name="Say (1)" id="2" localization="8" tooltip="Say some text. The text can be localized." x="538" y="291"><bitmap>media/images/box/interaction/say.png</bitmap><script language="4"><content><![CDATA[import time
+        self.onUnload()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this Input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this Input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when Box behavior is finished." id="4" /><Parameter name="Voice shaping (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="150" tooltip='Used to modify at runtime the voice feature (tone, speed). In a slighty&#x0A;different way than pitch and speed, it gives a kind of &quot;gender or age&#x0A;modification&quot; effect.&#x0A;&#x0A;For instance, a quite good male derivation of female voice can be&#x0A;obtained setting this parameter to 78%.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the&#x0A;speed parameter. For example, if you want to decrease by 20% the voice&#x0A;shaping, you will have to increase by 20% the speed to keep a constant&#x0A;average speed.' id="5" /><Parameter name="Speed (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="200" tooltip="Changes the speed of the voice.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the voice&#x0A;shaping parameter. For example, if you want to increase by 20% the speed, you&#x0A;will have to decrease by 20% the voice shaping to keep a constant average&#x0A;speed." id="6" /><Parameter name="Text" inherits_from_parent="0" content_type="5" value="I&apos;m here" default_value="" tooltip="The text you want to say. Don&apos;t forget to translate it!" id="7" /></Box><Box name="NAOMark" id="2" localization="8" tooltip="Detect NAOMark and return its ID number." x="147" y="319"><bitmap>media/images/box/interaction/uramark.png</bitmap><script language="4"><content><![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self, False)
+
+    def onLoad(self):
+        self.bIsRunning = False
+
+    def onUnload(self):
+        self.bIsRunning = False
+
+    def onInput_onStart(self):
+        self.bIsRunning = True
+
+    def onInput_onStop(self):
+        if( self.bIsRunning ):
+            self.onUnload()
+            self.onStopped()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Input name="LandmarkDetected" type="0" type_size="1" nature="4" stm_value_name="LandmarkDetected" inner="1" tooltip="Connected to ALMemory. Will be stimulated every time the value subscribed to changes, respecting the refresh period." id="4" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is stopped." id="5" /><Output name="onMarkDetected" type="2" type_size="1" nature="2" inner="0" tooltip="ID number of the detected NAOmark." id="6" /><Output name="onNoMark" type="1" type_size="1" nature="2" inner="0" tooltip="No NAOmark has been detected." id="7" /><Timeline enable="0"><BehaviorLayer name="behavior_layer1"><BehaviorKeyframe name="keyframe1" index="1"><Diagram><Box name="Get Marks List" id="1" localization="8" tooltip="Extracts the list of detected marks (empty if no mark) from the naomarks detection&#x0A;extractor data." x="139" y="75"><bitmap>media/images/box/box-script.png</bitmap><script language="4"><content><![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self, False)
+
+    def onUnload(self):
+        #puts code for box cleanup here
+        pass
+
+    def onInput_onStart(self, p):
+        markIDs = []
+        # Generic Extractor output format:
+        # p = [ [timeStampMaj, timeStampMin], [ tag0, tag1, ... tagN] ] with tag = [ shapeInfo, moreInfo ]
+        if(len(p) > 0):
+            markInfoArray = p[1]
+            for markInfo in markInfoArray:
+                moreInfo = markInfo[1]
+                # moreInfo = [ landmarkID ]
+                markIDs.append(moreInfo[0])
+        self.onStopped(markIDs)]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="0" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input. It must be the&#x0A;LandmarkDetected extractor data." id="2" /><Output name="onStopped" type="0" type_size="1" nature="1" inner="0" tooltip="Extracted list of detected marks." id="3" /></Box><Box name="ProcessMarksList" id="2" localization="8" tooltip="Process the list of detected marks to give the ID number of the first detected mark&#x0A;and notify when there is no mark detected.&#x0A;&#x0A;An output (either one or the other) is stimulated each time the first detected&#x0A;mark changes." x="293" y="84"><bitmap>media/images/box/interaction/uramark.png</bitmap><script language="4"><content><![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self, False)
+
+    def onLoad(self):
+        self.nNumLastDetected = -1
+
+    def onUnload(self):
+        #puts code for box cleanup here
+        pass
+
+    def onInput_onStart(self, p):
+        if(len(p) == 0):
+            self.nNumLastDetected = -1
+            self.onNoMark()
+        else:
+            if(self.nNumLastDetected != p[0]):
+                #only stimulate output if a mark wasn't detected before !
+                self.nNumLastDetected = p[0]
+                self.onMarkDetected( self.nNumLastDetected )]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="0" type_size="1" nature="2" inner="0" tooltip="The detected NAOmarks list." id="2" /><Output name="onMarkDetected" type="2" type_size="1" nature="1" inner="0" tooltip="Number of the detected NAOmark." id="3" /><Output name="onNoMark" type="1" type_size="1" nature="1" inner="0" tooltip="No NAOmark is detected." id="4" /></Box><Link inputowner="0" indexofinput="7" outputowner="2" indexofoutput="4" /><Link inputowner="0" indexofinput="6" outputowner="2" indexofoutput="3" /><Link inputowner="1" indexofinput="2" outputowner="0" indexofoutput="4" /><Link inputowner="2" indexofinput="2" outputowner="1" indexofoutput="3" /></Diagram></BehaviorKeyframe></BehaviorLayer></Timeline></Box><Box name="Sound Tracker" id="6" localization="-1" tooltip="This box makes the robot track a sound with different modes.&#x0A;&#x0A;V1.1.0" x="416" y="335"><bitmap>media/images/box/interaction/target_sound.png</bitmap><script language="4"><content><![CDATA[import time
+
+class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+        self.tracker = ALProxy( "ALTracker" )
+        self.memory = ALProxy("ALMemory")
+        try:
+            self.soundLocation = ALProxy("ALSoundLocalization")
+        except Exception as e:
+            self.soundLocation = None
+            self.logger.error(e)
+        self.targetName = "Sound"
+        self.distance = 0.0
+        self.soundDistance = 0.5
+        self.confidence = 0.0
+        self.thresholdX = 0.0
+        self.effector = "None"
+        self.sensitivity = 0.7
+        self.subscribeDone = False
+        self.isRunning = False
+
+    def onLoad(self):
+        self.BIND_PYTHON(self.getName(), "setParameter")
+        self.BIND_PYTHON(self.getName(), "onTargetLost")
+        self.BIND_PYTHON(self.getName(), "onTargetReached")
+        self.BIND_PYTHON(self.getName(), "onTargetChanged")
+        if self.soundLocation:
+            self.memory.subscribeToEvent("ALTracker/ActiveTargetChanged", self.getName(), "onTargetChanged")
+
+    def onUnload(self):
+        if self.subscribeDone:
+            self.memory.unsubscribeToEvent("ALTracker/TargetLost", self.getName())
+            self.memory.unsubscribeToEvent("ALTracker/TargetReached", self.getName())
+            self.subscribeDone = False
+
+        if self.isRunning:
+            self.tracker.setEffector("None")
+            self.tracker.stopTracker()
+            self.tracker.unregisterTarget(self.targetName)
+            self.isRunning = False
+
+    def onInput_onStart(self):
+        self.memory.subscribeToEvent("ALTracker/TargetLost", self.getName(), "onTargetLost")
+        self.memory.subscribeToEvent("ALTracker/TargetReached", self.getName(), "onTargetReached")
+        self.subscribeDone = False
+
+        mode = self.getParameter("Mode")
+        self.confidence = self.getParameter("Threshold to be sure of the location (%)") / 100.0
+        self.distance = self.getParameter("Distance (m)")
+        self.thresholdX = self.getParameter("Threshold X (m)")
+        self.effector = self.getParameter("Effector")
+        self.sensitivity = self.getParameter("Sensitivity")
+
+        if self.soundLocation:
+            self.soundLocation.setParameter("Sensitivity", self.sensitivity)
+
+        self.tracker.setEffector(self.effector)
+
+        self.tracker.registerTarget(self.targetName, [self.soundDistance, self.confidence])
+        self.tracker.setRelativePosition([-self.distance, 0.0, 0.0,
+                                            self.thresholdX, 0.1, 0.3])
+        self.tracker.setMode(mode)
+
+        self.tracker.track(self.targetName) #Start tracker
+        self.isRunning = True
+
+    def onInput_onStop(self):
+        self.onStopped()
+        self.onUnload()
+
+    def setParameter(self, parameterName, newValue):
+        GeneratedClass.setParameter(self, parameterName, newValue)
+        if (parameterName == 'Mode'):
+            self.tracker.setMode(newValue)
+            return
+
+        if (parameterName == "Threshold to be sure of the location (%)"):
+            self.confidence = self.getParameter("Threshold to be sure of the location (%)") / 100.0
+            self.tracker.registerTarget(self.targetName, [self.soundDistance, self.confidence])
+            return
+
+        if (parameterName == "Distance (m)"):
+            self.distance = newValue
+            self.tracker.setRelativePosition([-self.distance, 0.0, 0.0,
+                                                self.thresholdX, 0.1, 0.3])
+            return
+
+        if (parameterName == "Threshold X (m)"):
+            self.thresholdX = newValue
+            self.tracker.setRelativePosition([-self.distance, 0.0, 0.0,
+                                                self.thresholdX, 0.1, 0.3])
+            return
+
+        if(parameterName == "Effector"):
+            self.tracker.setEffector(newValue)
+            self.effector = newValue
+            return
+
+        if(parameterName == "Sensitivity"):
+            self.sensitivity = newValue
+            if self.soundLocation:
+                self.soundLocation.setParameter("Sensitivity", self.sensitivity)
+            return
+
+
+    def onTargetLost(self, key, value, message):
+        self.targetLost()
+
+    def onTargetReached(self, key, value, message):
+        self.targetReached()
+
+    def onTargetChanged(self, key, value, message):
+        if value == self.targetName and not self.subscribeDone:
+            self.memory.subscribeToEvent("ALTracker/TargetLost", self.getName(), "onTargetLost")
+            self.memory.subscribeToEvent("ALTracker/TargetReached", self.getName(), "onTargetReached")
+            self.subscribeDone = True
+        elif value != self.targetName and self.subscribeDone:
+            self.memory.unsubscribeToEvent("ALTracker/TargetLost", self.getName())
+            self.memory.unsubscribeToEvent("ALTracker/TargetReached", self.getName())
+            self.subscribeDone = False]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Output name="targetLost" type="1" type_size="1" nature="2" inner="0" tooltip="Signal sent when the target is lost." id="5" /><Output name="targetReached" type="1" type_size="1" nature="2" inner="0" tooltip="Signal sent when the target is reached." id="6" /><Parameter name="Mode" inherits_from_parent="0" content_type="3" value="Move" default_value="Head" custom_choice="0" tooltip="Set tracker mode" id="7"><Choice value="Head" /><Choice value="WholeBody" /><Choice value="Move" /></Parameter><Parameter name="Effector" inherits_from_parent="0" content_type="3" value="None" default_value="None" custom_choice="0" tooltip="Set effector to use for tracking. Head is always used." id="8"><Choice value="None" /><Choice value="Arms" /><Choice value="LArm" /><Choice value="RArm" /></Parameter><Parameter name="Threshold to be sure of the location (%)" inherits_from_parent="0" content_type="1" value="50" default_value="50" min="1" max="100" tooltip="If a sound is localized with a threshold higher than this value, then the sound&#x0A;location will be sent on the output. Else, the robot will consider that the sound is not&#x0A;localized at the right location and he will not take it into account." id="9" /><Parameter name="Distance (m)" inherits_from_parent="0" content_type="2" value="0.3" default_value="0.3" min="0.01" max="5" tooltip="Distance the robot will try to maintain from its target in move modes." id="10" /><Parameter name="Threshold X (m)" inherits_from_parent="0" content_type="2" value="0.1" default_value="0.1" min="0.01" max="1" tooltip="Threshold above which the robot will move to track its target in move modes." id="11" /><Parameter name="Sensitivity" inherits_from_parent="0" content_type="2" value="0.7" default_value="0.7" min="0.01" max="1" tooltip="Sensitivity to adjust the capacity of the robot to locate quiet sounds." id="12" /></Box><Box name="Blind" id="3" localization="8" tooltip="Say some text. The text can be localized." x="255" y="501"><bitmap>media/images/box/interaction/say.png</bitmap><script language="4"><content><![CDATA[import time
 
 class MyClass(GeneratedClass):
     def __init__(self):
@@ -819,7 +995,7 @@ class MyClass(GeneratedClass):
                 self.bIsRunning = False
 
     def onInput_onStop(self):
-        self.onUnload()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this Input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this Input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when Box behavior is finished." id="4" /><Parameter name="Voice shaping (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="150" tooltip='Used to modify at runtime the voice feature (tone, speed). In a slighty&#x0A;different way than pitch and speed, it gives a kind of &quot;gender or age&#x0A;modification&quot; effect.&#x0A;&#x0A;For instance, a quite good male derivation of female voice can be&#x0A;obtained setting this parameter to 78%.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the&#x0A;speed parameter. For example, if you want to decrease by 20% the voice&#x0A;shaping, you will have to increase by 20% the speed to keep a constant&#x0A;average speed.' id="5" /><Parameter name="Speed (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="200" tooltip="Changes the speed of the voice.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the voice&#x0A;shaping parameter. For example, if you want to increase by 20% the speed, you&#x0A;will have to decrease by 20% the voice shaping to keep a constant average&#x0A;speed." id="6" /><Parameter name="Text" inherits_from_parent="0" content_type="5" value="I&apos;ve failed" default_value="" tooltip="The text you want to say. Don&apos;t forget to translate it!" id="7" /></Box><Link inputowner="12" indexofinput="2" outputowner="7" indexofoutput="4" /><Link inputowner="7" indexofinput="2" outputowner="0" indexofoutput="2" /><Link inputowner="12" indexofinput="3" outputowner="12" indexofoutput="6" /><Link inputowner="1" indexofinput="2" outputowner="12" indexofoutput="6" /><Link inputowner="0" indexofinput="4" outputowner="1" indexofoutput="4" /><Link inputowner="2" indexofinput="2" outputowner="12" indexofoutput="5" /><Link inputowner="0" indexofinput="4" outputowner="2" indexofoutput="4" /></Diagram></BehaviorKeyframe></BehaviorLayer></Timeline></Box><Box name="Awaken" id="4" localization="8" tooltip="Awaken my masters." x="150" y="77"><bitmap>media/images/box/box-diagram.png</bitmap><script language="4"><content><![CDATA[]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onSuccess" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished successfully." id="4" /><Output name="onFailure" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior failed to execute." id="5" /><Timeline enable="0"><BehaviorLayer name="behavior_layer1"><BehaviorKeyframe name="keyframe1" index="1"><Diagram><Box name="Stand Up" id="1" localization="8" tooltip="the robot tries to stand up from any position for a number of tries.&#x0A;&#x0A;Note: The number of tries can be set in parameters." x="255" y="9"><bitmap>media/images/box/movement/stand.png</bitmap><script language="4"><content><![CDATA[]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="success" type="1" type_size="1" nature="1" inner="0" tooltip="Stimulated when the robot succeed in standing up." id="4" /><Output name="failure" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when the robot failed to stand up after n tries.&#x0A;&#x0A;Note: The number of tries can be set in parameters." id="5" /><Parameter name="Maximum of tries" inherits_from_parent="0" content_type="1" value="3" default_value="3" min="0" max="10" tooltip="The maximum number of fails of stand up before stimulating the failure output." id="6" /><Timeline enable="0"><BehaviorLayer name="StandUpBehavior"><BehaviorKeyframe name="DetectRobotPose" index="1"><Diagram><Box name="Goto Posture" id="2" localization="8" tooltip="The robot goes from its current postition to the asked posture." x="331" y="92"><bitmap>media/images/box/box-diagram.png</bitmap><script language="4"><content><![CDATA[class MyClass(GeneratedClass):
+        self.onUnload()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this Input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this Input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when Box behavior is finished." id="4" /><Parameter name="Voice shaping (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="150" tooltip='Used to modify at runtime the voice feature (tone, speed). In a slighty&#x0A;different way than pitch and speed, it gives a kind of &quot;gender or age&#x0A;modification&quot; effect.&#x0A;&#x0A;For instance, a quite good male derivation of female voice can be&#x0A;obtained setting this parameter to 78%.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the&#x0A;speed parameter. For example, if you want to decrease by 20% the voice&#x0A;shaping, you will have to increase by 20% the speed to keep a constant&#x0A;average speed.' id="5" /><Parameter name="Speed (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="200" tooltip="Changes the speed of the voice.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the voice&#x0A;shaping parameter. For example, if you want to increase by 20% the speed, you&#x0A;will have to decrease by 20% the voice shaping to keep a constant average&#x0A;speed." id="6" /><Parameter name="Text" inherits_from_parent="0" content_type="5" value="I am blind" default_value="" tooltip="The text you want to say. Don&apos;t forget to translate it!" id="7" /></Box><Link inputowner="12" indexofinput="2" outputowner="7" indexofoutput="4" /><Link inputowner="12" indexofinput="3" outputowner="12" indexofoutput="6" /><Link inputowner="0" indexofinput="4" outputowner="1" indexofoutput="4" /><Link inputowner="1" indexofinput="2" outputowner="12" indexofoutput="4" /><Link inputowner="2" indexofinput="2" outputowner="0" indexofoutput="2" /><Link inputowner="3" indexofinput="2" outputowner="2" indexofoutput="7" /><Link inputowner="2" indexofinput="2" outputowner="3" indexofoutput="4" /><Link inputowner="6" indexofinput="2" outputowner="2" indexofoutput="6" /></Diagram></BehaviorKeyframe></BehaviorLayer></Timeline></Box><Box name="Awaken" id="4" localization="8" tooltip="Awaken my masters." x="150" y="77"><bitmap>media/images/box/box-diagram.png</bitmap><script language="4"><content><![CDATA[]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onSuccess" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished successfully." id="4" /><Output name="onFailure" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior failed to execute." id="5" /><Timeline enable="0"><BehaviorLayer name="behavior_layer1"><BehaviorKeyframe name="keyframe1" index="1"><Diagram><Box name="Stand Up" id="1" localization="8" tooltip="the robot tries to stand up from any position for a number of tries.&#x0A;&#x0A;Note: The number of tries can be set in parameters." x="255" y="9"><bitmap>media/images/box/movement/stand.png</bitmap><script language="4"><content><![CDATA[]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="success" type="1" type_size="1" nature="1" inner="0" tooltip="Stimulated when the robot succeed in standing up." id="4" /><Output name="failure" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when the robot failed to stand up after n tries.&#x0A;&#x0A;Note: The number of tries can be set in parameters." id="5" /><Parameter name="Maximum of tries" inherits_from_parent="0" content_type="1" value="3" default_value="3" min="0" max="10" tooltip="The maximum number of fails of stand up before stimulating the failure output." id="6" /><Timeline enable="0"><BehaviorLayer name="StandUpBehavior"><BehaviorKeyframe name="DetectRobotPose" index="1"><Diagram><Box name="Goto Posture" id="2" localization="8" tooltip="The robot goes from its current postition to the asked posture." x="331" y="92"><bitmap>media/images/box/box-diagram.png</bitmap><script language="4"><content><![CDATA[class MyClass(GeneratedClass):
     def __init__(self):
         GeneratedClass.__init__(self, False)
 

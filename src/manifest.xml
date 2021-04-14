@@ -30,11 +30,11 @@
    <nature>interactive</nature>
    <permissions/>
   </behaviorContent>
-  <dialogContent topicName="Dialogue_Sun" typeVersion="1.0">
-   <topic language="en_US" path="Dialogue_Sun/Dialogue_Sun_enu.top"/>
+  <dialogContent typeVersion="1.0" topicName="Dialogue_Sun">
+   <topic path="Dialogue_Sun/Dialogue_Sun_enu.top" language="en_US"/>
   </dialogContent>
-  <dialogContent topicName="PresentationTopic" typeVersion="1.0">
-   <topic language="en_US" path="PresentationTopic/PresentationTopic_enu.top"/>
+  <dialogContent typeVersion="1.0" topicName="PresentationTopic">
+   <topic path="PresentationTopic/PresentationTopic_enu.top" language="en_US"/>
   </dialogContent>
  </contents>
  <requirements>
