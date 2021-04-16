@@ -441,10 +441,15 @@
     <context>
         <name>FollowCome/behavior.xar:/Say (1)</name>
         <message>
-            <location filename="FollowCome/behavior.xar" line="0"/>
             <source>bye</source>
             <comment>Text</comment>
-            <translation type="unfinished">bye</translation>
+            <translation type="obsolete">bye</translation>
+        </message>
+        <message>
+            <location filename="FollowCome/behavior.xar" line="0"/>
+            <source>I am a thristy boi</source>
+            <comment>Text</comment>
+            <translation type="unfinished">I am a thristy boi</translation>
         </message>
     </context>
     <context>
