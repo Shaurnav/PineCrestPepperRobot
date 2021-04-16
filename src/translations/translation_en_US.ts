@@ -822,10 +822,9 @@
     <context>
         <name>Presentation/behavior.xar:/VersionTwo/Lost</name>
         <message>
-            <location filename="Presentation/behavior.xar" line="0"/>
             <source>I lost you</source>
             <comment>Text</comment>
-            <translation type="unfinished">I lost you</translation>
+            <translation type="obsolete">I lost you</translation>
         </message>
     </context>
     <context>
@@ -843,6 +842,20 @@
             <source>Hello</source>
             <comment>Text</comment>
             <translation type="vanished">Hello</translation>
+        </message>
+    </context>
+    <context>
+        <name>Presentation/behavior.xar:/VersionTwo/Whoops</name>
+        <message>
+            <source>I will now follow you</source>
+            <comment>Text</comment>
+            <translation type="obsolete">I will now follow you</translation>
+        </message>
+        <message>
+            <location filename="Presentation/behavior.xar" line="0"/>
+            <source>whoops</source>
+            <comment>Text</comment>
+            <translation type="unfinished">whoops</translation>
         </message>
     </context>
     <context>
