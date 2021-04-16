@@ -825,6 +825,14 @@
         </message>
     </context>
     <context>
+        <name>Presentation/behavior.xar:/Say (1)</name>
+        <message>
+            <source>Done</source>
+            <comment>Text</comment>
+            <translation type="obsolete">Done</translation>
+        </message>
+    </context>
+    <context>
         <name>Presentation/behavior.xar:/VersionTwo/Lost</name>
         <message>
             <source>I lost you</source>
