@@ -872,6 +872,20 @@
         </message>
     </context>
     <context>
+        <name>PresentationSterlingMode/behavior.xar:/Say</name>
+        <message>
+            <source>Hello</source>
+            <comment>Text</comment>
+            <translation type="vanished">Hello</translation>
+        </message>
+        <message>
+            <location filename="PresentationSterlingMode/behavior.xar" line="0"/>
+            <source>Hi! Ask me about anything PC related!</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Hi! Ask me about anything PC related!</translation>
+        </message>
+    </context>
+    <context>
         <name>SpeechCommands/behavior.xar:/Awaken/Awaken</name>
         <message>
             <source>Mesame tamae, vaga aruyi taki yo</source>

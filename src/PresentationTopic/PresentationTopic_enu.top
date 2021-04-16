@@ -45,8 +45,15 @@ u:(~perez) Mr. Perez is the teacher of AP Computer Science A, Post-AP Data Struc
 u1:(yes) Okay, let's go. I'm excited to see Mr. Perez. He's really funny.
 u1:(no) Alright, maybe another time.
 #Mister Solomon
-
+concept:(solomon) [rob solomon "Calculus with Mister Solomon" geometry "multi-variable calculus"]
+u:(~solomon) Mr. Solomon is the teacher of Geometry Honors, Calculus I Honors, AP Calculus AB, and Multi-Variable Calculus. Would you like to go see his room?
+u1:(yes) Sure, let's go. Mr. Solomon has a great sense of humor, which really helps his students pay attention in class.
+u1:(no) Maybe we can see him later.
 #Mister Powers
+concept:(powers) [john raymond powers statistics "ap statistics" "Calculus with Mister Powers"]
+u:(~powers) Mr. Powers is the teacher of AP Statistics and AP Calculus AB. Would you like to go see his room?
+u1:(yes) Alright, let's go. Mr. Powers always writes an interesting topic of the week and joke of the day on the whiteboard to keep his students happy. I like that about his class.
+u1:(no) Okay, that's fine. Maybe later.
 #Mister Low
 #Misses Hernandez
 
