@@ -841,6 +841,15 @@
         </message>
     </context>
     <context>
+        <name>Presentation/behavior.xar:/VersionTwo/Move To</name>
+        <message>
+            <location filename="Presentation/behavior.xar" line="0"/>
+            <source>I will now follow you</source>
+            <comment>Text</comment>
+            <translation type="unfinished">I will now follow you</translation>
+        </message>
+    </context>
+    <context>
         <name>Presentation/behavior.xar:/VersionTwo/Say</name>
         <message>
             <location filename="Presentation/behavior.xar" line="0"/>
