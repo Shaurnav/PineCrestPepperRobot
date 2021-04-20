@@ -3,5 +3,13 @@
  <descriptionLanguages>
   <language>en_US</language>
  </descriptionLanguages>
- <contents/>
+ <contents>
+  <behaviorContent path="CustomFaces">
+   <nature>interactive</nature>
+   <permissions/>
+  </behaviorContent>
+  <dialogContent topicName="PresentationTopic" typeVersion="1.0">
+   <topic language="en_US" path="PresentationTopic/PresentationTopic_enu.top"/>
+  </dialogContent>
+ </contents>
 </package>

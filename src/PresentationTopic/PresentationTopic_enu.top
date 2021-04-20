@@ -5,14 +5,19 @@ language: enu
 concept:(hello) [hello hi hey "good morning" greetings]
 concept:(farewell) [farewell bye "good bye" "see you"]
 
+u:(e:onStart) Hello. What is up my fellow human! $onStopped=1
+
 # Catching inputs and triggering outputs
 #u:(e:onStart) $onStopped=1
+
 
 # Replying to speech
 
 concept:(happy) [happy "I feel great" "I love today"]
 concept:(date) [date day today]
 u:(~happy) Good to know that you are happy. I am happy too!
+
+
 
 u:(ice cream) do you like ice cream?
     u1:(yes) awesome ice cream is good
@@ -27,7 +32,7 @@ u:("when was Pine Crest {founded}") In 1934, Mae Mcmillan founded Pine Crest in 
 u:("why {praise}") The aplus bug gives us light, warmth and the most important thing of life: the container. I was once a lost soul, until I found my faith. Now I pray and fight in the name of the A plus bug.
 
 u:("{"who is"} the best teacher") Mr Perez is the best teacher. I really enjoyed his lesson on containers in java. Would you like to see the a plus bug. 
-u1:(yes) bruh $whereToPraise=1
+u1:(yes) bruh $whereTnPraise=1
 u1:(no) bruh number two
 
 u:("how are you doing") I am great how are you. 
@@ -47,7 +52,7 @@ u1:(no) Alright, maybe another time.
 #Mister Solomon
 concept:(solomon) [rob solomon "Calculus with Mister Solomon" geometry "multi-variable calculus"]
 u:(~solomon) Mr. Solomon is the teacher of Geometry Honors, Calculus I Honors, AP Calculus AB, and Multi-Variable Calculus. Would you like to go see his room?
-u1:(yes) Sure, let's go. Mr. Solomon has a great sense of humor, which really helps his students pay attention in class.
+u1:(yes) Sure, let's go. Mr. Solomon has a great sense of humor, which really helps his students pay attention in class. $farewell=1
 u1:(no) Maybe we can see him later.
 #Mister Powers
 concept:(powers) [john raymond powers statistics "ap statistics" "Calculus with Mister Powers"]

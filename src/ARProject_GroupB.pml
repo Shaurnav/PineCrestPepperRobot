@@ -7,6 +7,7 @@
         <BehaviorDescription name="behavior" src="Dialogue" xar="behavior.xar" />
         <BehaviorDescription name="behavior" src="Presentation" xar="behavior.xar" />
         <BehaviorDescription name="behavior" src="PresentationSterlingMode" xar="behavior.xar" />
+        <BehaviorDescription name="behavior" src="CustomFaces" xar="behavior.xar" />
     </BehaviorDescriptions>
     <Dialogs>
         <Dialog name="Dialogue_Sun" src="Dialogue_Sun/Dialogue_Sun.dlg" />

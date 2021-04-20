@@ -10,6 +10,20 @@
         </message>
     </context>
     <context>
+        <name>CustomFaces/behavior.xar:/Say</name>
+        <message>
+            <source>Hello</source>
+            <comment>Text</comment>
+            <translation type="vanished">Hello</translation>
+        </message>
+        <message>
+            <location filename="CustomFaces/behavior.xar" line="0"/>
+            <source>I forgot everyone's fac</source>
+            <comment>Text</comment>
+            <translation type="unfinished">I forgot everyone's fac</translation>
+        </message>
+    </context>
+    <context>
         <name>Dialogue/behavior.xar:/Awaken/Awaken</name>
         <message>
             <source>Mesame tamae, vaga aruyi taki yo</source>
@@ -888,10 +902,9 @@
             <translation type="vanished">Hello</translation>
         </message>
         <message>
-            <location filename="PresentationSterlingMode/behavior.xar" line="0"/>
             <source>Hi! Ask me about anything PC related!</source>
             <comment>Text</comment>
-            <translation type="unfinished">Hi! Ask me about anything PC related!</translation>
+            <translation type="obsolete">Hi! Ask me about anything PC related!</translation>
         </message>
     </context>
     <context>
