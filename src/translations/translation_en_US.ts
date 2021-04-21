@@ -213,10 +213,15 @@
             <translation type="obsolete">Mesame tamae, vaga aruyi taki yo</translation>
         </message>
         <message>
-            <location filename="Faces/behavior.xar" line="0"/>
             <source>An error has occurred in awaken</source>
             <comment>Text</comment>
-            <translation type="unfinished">An error has occurred in awaken</translation>
+            <translation type="obsolete">An error has occurred in awaken</translation>
+        </message>
+        <message>
+            <location filename="Faces/behavior.xar" line="0"/>
+            <source>I am awakon</source>
+            <comment>Text</comment>
+            <translation type="unfinished">I am awakon</translation>
         </message>
     </context>
     <context>
