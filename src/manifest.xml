@@ -1,15 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <package version="0.0.0">
- <descriptionLanguages>
-  <language>en_US</language>
- </descriptionLanguages>
- <contents>
-  <behaviorContent path="CustomFaces">
-   <nature>interactive</nature>
-   <permissions/>
-  </behaviorContent>
-  <dialogContent topicName="PresentationTopic" typeVersion="1.0">
-   <topic language="en_US" path="PresentationTopic/PresentationTopic_enu.top"/>
-  </dialogContent>
- </contents>
+ <contents/>
 </package>

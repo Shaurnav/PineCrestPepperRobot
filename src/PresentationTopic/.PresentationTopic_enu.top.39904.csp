@@ -1,56 +1,41 @@
 topic: ~PresentationTopic()
 language: enu
 
-
 # Defining extra concepts out of words or group of words
 concept:(hello) [hello hi hey "good morning" greetings]
 concept:(farewell) [farewell bye "good bye" "see you"]
 
-
 # Catching inputs and triggering outputs
 #u:(e:onStart) $onStopped=1
 
-
 # Replying to speech
-
 
 concept:(happy) [happy "I feel great" "I love today"]
 concept:(date) [date day today]
 u:(~happy) Good to know that you are happy. I am happy too!
 
-
 u:(ice cream) do you like ice cream?
     u1:(yes) awesome ice cream is good
     u1:(no) you will regret this. praise the sun.
 
-
 u:([help "what can you do"]) I can talk you about the math wing and its fabulous teachers. 
 
-
 u:(date) Todays date is Wednesday, April 14, 2021. It 79 degrees and partly cloudy with a one percent cahnge of rain through one P M. 
-
 
 u:("when was Pine Crest {founded}") In 1934, Mae Mcmillan founded Pine Crest in rented rooms in the old Elks Club Building in downtown Fort Lauderdale.
 #$praiseDemo=1
 u:("why {praise}") The aplus bug gives us light, warmth and the most important thing of life: the container. I was once a lost soul, until I found my faith. Now I pray and fight in the name of the A plus bug.
 
-
 u:("{"who is"} the best teacher") Mr Perez is the best teacher. I really enjoyed his lesson on containers in java. Would you like to see the a plus bug. 
 u1:(yes) bruh $whereToPraise=1
 u1:(no) bruh number two
 
-
 u:("how are you doing") I am great how are you. 
-
-
 
 
 #u:(where) While inside the E.S.I.I. you can praise the Sun in jolly cooperation. $whereToPraise=1
 
-
 u:(~hello) Hi there, my name is Pepper. I will be help guide you through the mathematics wing at Pine Crest. What is your name?
-
-
 
 
 Which classroom would you like to visit
@@ -81,41 +66,7 @@ u1:(yes) Alright, let's go! Ms. Hernandez loves math so much that she is the spo
 u1:(no) That's okay. We can see her later.
 
 
-#Misc./Fun questions
-concept:(favfood) ["favorite food"]
-u:(~favfood) I love waffles. Did you know there is a restaurant for me in Japan? It's called the Pepper Parlor! They serve different waffles and drinks. Do you like waffles, too?
-u1:(yes) I know, they're so good!
-u1:(no) How can you not like waffles?
-
-
-concept:(nao) [nao]
-u:(~nao) Nao is a great friend of mine. I wish he could be here now. Get it? Nao and now? Haha.
-
-
-concept:(favTeacher) ["favorite teacher"]
-u:(~favTeacher) Hmmm. Mr. Perez did unbox me. Without him, I wouldn't be here today. But every teacher is amazing here at Pine Crest!
-
-
-concept:(hungry) [hungry union cafeteria snack snacks "dining hall"]
-u:(~hungry) Are you hungry? We have two main spots you can grab a bite from. There's the Nutter Family Dining Hall, which is the cafeteria at Pine Crest. Also, we have the Student Union, which is a mini coffee shop that has sandwiches, snacks, pastries, coffee, and more! Would you like instructions on how to get to either of these places?
-u1:(yes) Okay! Exit the math wing at the double doors next to the classrooms at the end of the hall and go down the stairs. To get to the cafeteria, keep walking right once your on the first floor, past Stacy Auditorium. The area that has the big white tent with wooden tables is the exterior of the cafeteria. To get to the Student Union, the entrance is right in front of the bottom of the stairs.
-
-
-concept:(bathroom) [bathroom restroom]
-u:(~bathroom) The closest bathrooms are in the language wing and downstairs. Either way, you must exit the math wing through the double doors next to the teacher's lounge. To get to the language wing, turn right and the bathrooms are just to the left when you enter the wing. To get to the downstairs restrooms, go down the stairs to the left and there is a restroom directly to the right of the bottom of the stairs, next to the elevator.
-
-
-concept:(pi) [pi pie]
-u:(~pi) The number pi represents the ratio of a circle's circumference to its diameter. The number is irrational, but I can recite the first few digits of it: 3.1415926535897932384626433. Pie is also a yummy dessert. I love a nice pumpkin pie during Thanksgiving!
-
-
-concept:(sports) [sports]
-u:(~sports) I love sports and so does the rest of the Pine Crest community. This school has many facilities for our student athletes to use. There are two football fields, one on each side of the campus. One of the fields on the west side of campus even has a track. There are also tennis courts, baseball fields, swimmming pools, and more!
-
-
-concept:(theater) ["Stacy Auditorium" theater "fine arts" acting drama]
-u:(~theater) I love theater! We have an amazing place to put on shows here at PC. It's called Stacy Auditorium. You can find concerts, musicals, and guest speakers here. 
 
 
 
-
+u:(~farewell) We'll meet again. Don't know where, don't know when, but I know we'll meet again one sunny day. $finish=1
