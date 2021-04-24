@@ -21,7 +21,12 @@
         <Topic name="Dialogue_Sun_enu" src="Dialogue_Sun/Dialogue_Sun_enu.top" topicName="" language="" />
         <Topic name="PresentationTopic_enu" src="PresentationTopic/PresentationTopic_enu.top" topicName="PresentationTopic" language="en_US" />
     </Topics>
-    <IgnoredPaths />
+    <IgnoredPaths>
+        <Path src="NaoMarkDetection" />
+        <Path src="NaoMarkDetection/ExampleDialog/ExampleDialog.dlg" />
+        <Path src="NaoMarkDetection/ExampleDialog/ExampleDialog_enu.top" />
+        <Path src="NaoMarkDetection/ExampleDialog" />
+    </IgnoredPaths>
     <Translations auto-fill="en_US">
         <Translation name="translation_en_US" src="translations/translation_en_US.ts" language="en_US" />
     </Translations>

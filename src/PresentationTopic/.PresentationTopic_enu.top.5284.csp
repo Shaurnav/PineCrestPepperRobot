@@ -78,34 +78,41 @@ u:(e:onPowers) Mr. Powers is the teacher of AP Statistics and AP Calculus A.B. H
 #Mister Wu
 concept:(wu) [wei-hao wu "pre-calculus"]
 u:(~wu) Mr. Wu teaches Pre-Calculus and Pre-Calculus Honors. Would you like to see his room?
-u1:(yes) Great, let's go! Something interesting about Mr. Wu's room is that he has a teddy bear named Arthur. It's a really cute bear! In his Pre-
+u1:(yes) Great, let's go! Something interesting about Mr. Wu's room is that he has a teddy bear named Arthur. It's a really cute bear! In his Pre-Calculus classes, Mr. Wu will help students get prepared for Calculus. He freshens up their algebra skills, since at PC, students spend a year taking geometry after Algebra 2. He also prepares them for Calculus by teaching new concepts like polar coordinates.
 u1:(no) Alright, we can go some other time.
 #Mister Wu Nao Mark
-u:(e:onWu) Mr. Wu teaches Pre-Calculus and Pre-Calculus Honors. Something interesting about Mr. Wu's room is that he has a teddy bear named Arthur. It's a really cute bear!
+u:(e:onWu) Mr. Wu teaches Pre-Calculus and Pre-Calculus Honors. Something interesting about Mr. Wu's room is that he has a teddy bear named Arthur. It's a really cute bear! In his Pre-Calculus classes, Mr. Wu will help students get prepared for Calculus. He freshens up their algebra skills, since at PC, students spend a year taking geometry after Algebra 2. He also prepares them for Calculus by teaching new concepts like polar coordinates.
 #Misses Hernandez
 concept:(hernandez) [jamille hernandez "calculus with misses hernandez" "math and theories club" "math club"]
 u:(~hernandez) Ms. Hernandez is the teacher for AP Calculus A.B. and AP Calculus B.C. Would you like to go see her room?
-u1:(yes) Alright, let's go! Ms. Hernandez loves math so much that she is the sponsor for Math and Theories Club. Also, did you know she hosts Brownie Thursdays for her students? I love brownies!
+u1:(yes) Alright, let's go! Ms. Hernandez loves math so much that she is the sponsor for Math and Theories Club. Also, did you know she hosts Brownie Thursdays for her students? I love brownies! In her classes, Ms. Herndandez teaches her students about the foundations of calculus. She teaches them derivatives and integrals, with plenty of application questions in the mix. Her second course, Calculus B C, expands upon the concepts found in the first.
 u1:(no) That's okay. We can see her later.
 #Misses Hernandez Nao Mark
-u:(e:onHernandez) Ms. Hernandez is the teacher for AP Calculus A.B. and AP Calculus B.C. Ms. Hernandez loves math so much that she is the sponsor for Math and Theories Club. Also, did you know she hosts Brownie Thursdays for her students? I love brownies!
+u:(e:onHernandez) Ms. Hernandez is the teacher for AP Calculus A.B. and AP Calculus B.C. Ms. Hernandez loves math so much that she is the sponsor for Math and Theories Club. Also, did you know she hosts Brownie Thursdays for her students? I love brownies! In her classes, Ms. Herndandez teaches her students about the foundations of calculus. She teaches them derivatives and integrals, with plenty of application questions in the mix. Her second course, Calculus B C, expands upon the concepts found in the first.
 #Mr Curran
 concept:(curran) [tim curran "pre-calculus" "Calculus with Mister Curran" "Deca Club" Deca]
 u: Mr. Curran is the teacher of Pre-Calculus and Calculus 1 Honors. Would you like to go see his room?
-u1:(yes) Alright, let's go! Mr. Curran is also the head of the Deca Club, which is all about business, finance, and economics. He sure is a busy teacher!
+u1:(yes) Alright, let's go! Mr. Curran is also the head of the Deca Club, which is all about business, finance, and economics. He sure is a busy teacher! In his Pre-Calculus classes, Mr. Curran will help students get prepared for Calculus. He freshens up their algebra skills, since at PC, students spend a year taking geometry after Algebra 2. He also prepares them for Calculus by teaching new concepts like polar coordinates.
 u1:(no) Oh. We can see him later.
 #Mr Curran Nao Mark
-u:(e:onCurran) Mr. Curran is the teacher of Pre-Calculus and Calculus 1 Honors. He is also the head of the Deca Club, which is all about business, finance, and economics. He sure is a busy teacher!
+u:(e:onCurran) Mr. Curran is the teacher of Pre-Calculus and Calculus 1 Honors. He is also the head of the Deca Club, which is all about business, finance, and economics. He sure is a busy teacher! In his Pre-Calculus classes, Mr. Curran will help students get prepared for Calculus. He freshens up their algebra skills, since at PC, students spend a year taking geometry after Algebra 2. He also prepares them for Calculus by teaching new concepts like polar coordinates.
 #Mr Lowe
 concept:(lowe) [lowe low]
 u: Mr. Lowe is the teacher of Algebra 2. Would you like to go see his room?
-u1:(yes)
+u1:(yes) Great, let's go! If you have any questions about Conic Sections, sequences and series, or quadratic equations, Mr. Lowe can help you out! His Algebra 2 course is all about preparing students for more advanced math classes by providing the foundations of algebra to them.
 u1:(no) Okay. We can go some other time.
 #Mr Lowe Nao Mark
-u:(e:onLowe) Mr. Lowe is the teacher of Algebra 2.
+u:(e:onLowe) Mr. Lowe is the teacher of Algebra 2. If you have any questions about Conic Sections, sequences and series, or quadratic equations, Mr. Lowe can help you out! His Algebra 2 course is all about preparing students for more advanced math classes by providing the foundations of algebra to them.
 #Mr Spitzig
-concept:(spitzig) [mark spitzig]
+concept:(spitzig) [mark spitzig "Geometry with Mister Spitzig" "Computer Science Principles"]
+u: Mr. Spitzig is the teacher of Geometry and Computer Science Principles.
+u1:(yes) Okay, let's go! Mr. Spitzig can help you learn anything from finding the area and volume of polygons to how the Internet works! In Geometry, students learn about geometric shapes and logic. The two connect when students write geometric proofs. The rest of his classes are Computer Science Principles, where he teaches his about how the Internet works and exposes them to programming for the first time using the M I T App Inventor application.
+u1:(no) Alright, that's fine.
 #Mr Spitzig Nao Mark
+u:(e:onSpitzig) Mr. Spitzig is the teacher of Geometry and Computer Science Principles. Mr. Spitzig can help you learn anything from finding the area and volume of polygons to how the Internet works! In Geometry, students learn about geometric shapes and logic. The two connect when students write geometric proofs. The rest of his classes are Computer Science Principles, where he teaches his about how the Internet works and exposes them to programming for the first time using the M I T App Inventor application.
+#Other
+u:(e:onDefault) I don't recognize this mark.
+u:(e:onRecognized) Try again.
 
 #Misc./Fun questions
 concept:(favfood) ["favorite food"]
