@@ -56,30 +56,34 @@ u:(~hello) Hi there, my name is Pepper. I will be help guide you through the mat
 Which classroom would you like to visit
 #Mister Perez
 concept:(perez) [angel perez "computer science" "comp sci" "data structures" "artificial intelligence" "A.I."]
-u:(~perez) Mr. Perez is the teacher of AP Computer Science A, Post-AP Data Structures, and Post-AP Artificial Intelligence. Would you like to go see his room?
+u:(e:onPerez) Mr. Perez is the teacher of AP Computer Science A, Post-AP Data Structures, and Post-AP Artificial Intelligence. Would you like to go see his room?
 u1:(yes) Okay, let's go! I'm excited to see Mr. Perez. He's really funny.
 u1:(no) Alright, maybe another time.
 #Mister Solomon
 concept:(solomon) [rob solomon "Calculus with Mister Solomon" geometry "multi-variable calculus"]
-u:(~solomon) Mr. Solomon is the teacher of Geometry Honors, Calculus 1 Honors, AP Calculus A.B., and Multi-Variable Calculus. Would you like to go see his room?
+u:(e:onSolomon) Mr. Solomon is the teacher of Geometry Honors, Calculus 1 Honors, AP Calculus A.B., and Multi-Variable Calculus. Would you like to go see his room?
 u1:(yes) Sure, let's go! Mr. Solomon has a great sense of humor, which really helps his students pay attention in class.
 u1:(no) Maybe we can see him later.
 #Mister Powers
 concept:(powers) [john raymond powers statistics "ap statistics" "Calculus with Mister Powers"]
-u:(~powers) Mr. Powers is the teacher of AP Statistics and AP Calculus A.B. Would you like to go see his room?
+u:(e:onPowers) Mr. Powers is the teacher of AP Statistics and AP Calculus A.B. Would you like to go see his room?
 u1:(yes) Alright, let's go! Mr. Powers always writes an interesting topic of the week and joke of the day on the whiteboard to keep his students happy. I like that about his class.
 u1:(no) Okay, that's fine. Maybe later.
 #Mister Wu
 concept:(wu) [wei-hao wu "pre-calculus"]
-u:(~wu) Mr. Wu teaches Pre-Calculus and Pre-Calculus Honors. Would you like to see his room?
+u:(e:onWu) Mr. Wu teaches Pre-Calculus and Pre-Calculus Honors. Would you like to see his room?
 u1:(yes) Great, let's go! Something interesting about Mr. Wu's room is that he has a teddy bear named Arthur. It's a really cute bear!
 u1:(no) Alright, we can go some other time.
 #Misses Hernandez
 concept:(hernandez) [jamille hernandez "calculus with misses hernandez" "math and theories club" "math club"]
-u:(~hernandez) Ms. Hernandez is the teacher for AP Calculus A.B. and AP Calculus B.C. Would you like to go see her room?
+u:(e:onHernandez) Ms. Hernandez is the teacher for AP Calculus A.B. and AP Calculus B.C. Would you like to go see her room?
 u1:(yes) Alright, let's go! Ms. Hernandez loves math so much that she is the sponsor for Math and Theories Club. Also, did you know she hosts Brownie Thursdays for her students? I love brownies!
 u1:(no) That's okay. We can see her later.
 
+
+u:(e:onDefault) Sorry, I don't know this teacher. Try again.
+
+u:(e:onUnrecognized) Sorry, I didn't catch that. Try again.
 
 #Misc./Fun questions
 concept:(favfood) ["favorite food"]
