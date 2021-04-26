@@ -13,7 +13,11 @@
     <Dialogs>
         <Dialog name="Dialogue_Sun" src="Dialogue_Sun/Dialogue_Sun.dlg" />
         <Dialog name="PresentationTopic" src="PresentationTopic/PresentationTopic.dlg" />
+<<<<<<< Updated upstream
         <Dialog name="ExampleDialog" src="NaoMarkDetection/ExampleDialog/ExampleDialog.dlg" />
+=======
+        <Dialog name="FollowMe" src="FollowMe/FollowMe.dlg" />
+>>>>>>> Stashed changes
     </Dialogs>
     <Resources>
         <File name="SunImage" src="html/SunImage.png" />
@@ -21,8 +25,14 @@
     </Resources>
     <Topics>
         <Topic name="Dialogue_Sun_enu" src="Dialogue_Sun/Dialogue_Sun_enu.top" topicName="" language="" />
+<<<<<<< Updated upstream
         <Topic name="ExampleDialog_enu" src="NaoMarkDetection/ExampleDialog/ExampleDialog_enu.top" topicName="ExampleDialog" language="en_US" />
         <Topic name="PresentationTopic_enu" src="PresentationTopic/PresentationTopic_enu.top" topicName="" language="" />
+=======
+        <Topic name="PresentationTopic_enu" src="PresentationTopic/PresentationTopic_enu.top" topicName="PresentationTopic" language="en_US" />
+        <Topic name="ExampleDialog_enu" src="NaoMarkDetection/ExampleDialog/ExampleDialog_enu.top" topicName="ExampleDialog" language="en_US" />
+        <Topic name="FollowMe_enu" src="FollowMe/FollowMe_enu.top" topicName="FollowMe" language="en_US" />
+>>>>>>> Stashed changes
     </Topics>
     <IgnoredPaths />
     <Translations auto-fill="en_US">

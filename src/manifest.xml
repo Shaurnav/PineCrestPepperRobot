@@ -1,7 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <package version="0.0.0">
+<<<<<<< Updated upstream
  <descriptionLanguages>
   <language>en_US</language>
  </descriptionLanguages>
  <contents/>
+=======
+ <supportedLanguages>
+  <language>en_US</language>
+ </supportedLanguages>
+ <descriptionLanguages>
+  <language>en_US</language>
+ </descriptionLanguages>
+ <contents>
+  <dialogContent topicName="FollowMe" typeVersion="1.0">
+   <topic language="en_US" path="FollowMe/FollowMe_enu.top"/>
+  </dialogContent>
+ </contents>
+>>>>>>> Stashed changes
 </package>

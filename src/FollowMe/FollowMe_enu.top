@@ -1,0 +1,25 @@
+topic: ~FollowMe()
+language: enu
+
+# Defining extra concepts out of words or group of words
+#concept:(hello) [hello hi hey "good morning" greetings]
+
+# Catching inputs and triggering outputs
+#u:(e:onStart) $onStopped=1
+
+# Replying to speech
+#u:(~hello) ~hello
+
+u:(e:onStart) Tell me to follow  you and I will try to follow you! 
+
+u:(follow face) As long as we make eye contact I will follow you. $onFollowFace=1
+
+u:(follow person) Say stop to stop! $onFollowPerson=1
+
+u:(end program) Till we meet again! $onStopped=1
+
+u:(turn) I will turn 90 degrees $onTurn=1
+
+u:(move) I will move toward you $onMove=1
+
+u:(stop) OK no worries! $onStopping=1
