@@ -635,100 +635,89 @@
     <context>
         <name>Presentation/behavior.xar:/DialogueModule/Awaken/Awaken</name>
         <message>
-            <location filename="Presentation/behavior.xar" line="0"/>
             <source>I'm waking up right now</source>
             <comment>Text</comment>
-            <translation type="unfinished">I'm waking up right now</translation>
+            <translation type="obsolete">I'm waking up right now</translation>
         </message>
     </context>
     <context>
         <name>Presentation/behavior.xar:/DialogueModule/Dialog/ChangeImage/Say</name>
         <message>
-            <location filename="Presentation/behavior.xar" line="0"/>
             <source>The best place is the main corridor. The glass roof let's you to know where is the Sun located, so you can praise it while bathing in sunlight.</source>
             <comment>Text</comment>
-            <translation type="unfinished">The best place is the main corridor. The glass roof let's you to know where is the Sun located, so you can praise it while bathing in sunlight.</translation>
+            <translation type="obsolete">The best place is the main corridor. The glass roof let's you to know where is the Sun located, so you can praise it while bathing in sunlight.</translation>
         </message>
     </context>
     <context>
         <name>Presentation/behavior.xar:/DialogueModule/Dialog/PraiseTheSun (1)/Say</name>
         <message>
-            <location filename="Presentation/behavior.xar" line="0"/>
             <source>Praise the sun</source>
             <comment>Text</comment>
-            <translation type="unfinished">Praise the sun</translation>
+            <translation type="obsolete">Praise the sun</translation>
         </message>
     </context>
     <context>
         <name>Presentation/behavior.xar:/DialogueModule/Dialog/PraiseTheSun/Say</name>
         <message>
-            <location filename="Presentation/behavior.xar" line="0"/>
             <source>Praise the sun</source>
             <comment>Text</comment>
-            <translation type="unfinished">Praise the sun</translation>
+            <translation type="obsolete">Praise the sun</translation>
         </message>
     </context>
     <context>
         <name>Presentation/behavior.xar:/DialogueModule/Face Learner/Say</name>
         <message>
-            <location filename="Presentation/behavior.xar" line="0"/>
             <source>Hello, what is your name?</source>
             <comment>Text</comment>
-            <translation type="unfinished">Hello, what is your name?</translation>
+            <translation type="obsolete">Hello, what is your name?</translation>
         </message>
     </context>
     <context>
         <name>Presentation/behavior.xar:/DialogueModule/Face Learner/Say (1)</name>
         <message>
-            <location filename="Presentation/behavior.xar" line="0"/>
             <source>Nice to meet you</source>
             <comment>Text</comment>
-            <translation type="unfinished">Nice to meet you</translation>
+            <translation type="obsolete">Nice to meet you</translation>
         </message>
     </context>
     <context>
         <name>Presentation/behavior.xar:/DialogueModule/Face Learner/Say (2)</name>
         <message>
-            <location filename="Presentation/behavior.xar" line="0"/>
             <source>I can't frame thou fearful symmetry</source>
             <comment>Text</comment>
-            <translation type="unfinished">I can't frame thou fearful symmetry</translation>
+            <translation type="obsolete">I can't frame thou fearful symmetry</translation>
         </message>
     </context>
     <context>
         <name>Presentation/behavior.xar:/DialogueModule/Greet Known/Praise together</name>
         <message>
-            <location filename="Presentation/behavior.xar" line="0"/>
             <source>Let's praise the Sun together</source>
             <comment>Text</comment>
-            <translation type="unfinished">Let's praise the Sun together</translation>
+            <translation type="obsolete">Let's praise the Sun together</translation>
         </message>
     </context>
     <context>
         <name>Presentation/behavior.xar:/DialogueModule/Greet Known/PraiseTheSun/Say</name>
         <message>
-            <location filename="Presentation/behavior.xar" line="0"/>
             <source>Praise the sun</source>
             <comment>Text</comment>
-            <translation type="unfinished">Praise the sun</translation>
+            <translation type="obsolete">Praise the sun</translation>
         </message>
     </context>
     <context>
         <name>Presentation/behavior.xar:/DialogueModule/Greet unknown/Say</name>
         <message>
-            <location filename="Presentation/behavior.xar" line="0"/>
             <source>Hello are you a student?</source>
             <comment>Text</comment>
-            <translation type="unfinished">Hello are you a student?</translation>
+            <translation type="obsolete">Hello are you a student?</translation>
         </message>
     </context>
     <context>
         <name>Presentation/behavior.xar:/DialogueModule/Say</name>
         <message>
-            <location filename="Presentation/behavior.xar" line="0"/>
             <source>Let's talk about the Sun. Ask me for help if you don't know what to ask.</source>
             <comment>Text</comment>
-            <translation type="unfinished">Let's talk about the Sun. Ask me for help if you don't know what to ask.</translation>
+            <translation type="obsolete">Let's talk about the Sun. Ask me for help if you don't know what to ask.</translation>
         </message>
     </context>
     <context>
@@ -819,10 +808,9 @@
             <translation type="vanished">Hello</translation>
         </message>
         <message>
-            <location filename="Presentation/behavior.xar" line="0"/>
             <source>Whoops I lost you where are you?</source>
             <comment>Text</comment>
-            <translation type="unfinished">Whoops I lost you where are you?</translation>
+            <translation type="obsolete">Whoops I lost you where are you?</translation>
         </message>
     </context>
     <context>
@@ -867,19 +855,17 @@
     <context>
         <name>Presentation/behavior.xar:/VersionTwo/Move To</name>
         <message>
-            <location filename="Presentation/behavior.xar" line="0"/>
             <source>I will now follow you</source>
             <comment>Text</comment>
-            <translation type="unfinished">I will now follow you</translation>
+            <translation type="obsolete">I will now follow you</translation>
         </message>
     </context>
     <context>
         <name>Presentation/behavior.xar:/VersionTwo/Say</name>
         <message>
-            <location filename="Presentation/behavior.xar" line="0"/>
             <source>I will now follow you</source>
             <comment>Text</comment>
-            <translation type="unfinished">I will now follow you</translation>
+            <translation type="obsolete">I will now follow you</translation>
         </message>
     </context>
     <context>
@@ -898,10 +884,108 @@
             <translation type="obsolete">I will now follow you</translation>
         </message>
         <message>
-            <location filename="Presentation/behavior.xar" line="0"/>
             <source>whoops</source>
             <comment>Text</comment>
-            <translation type="unfinished">whoops</translation>
+            <translation type="obsolete">whoops</translation>
+        </message>
+    </context>
+    <context>
+        <name>PresentationSterlingMode/behavior.xar:/DialogueModule/Awaken/Awaken</name>
+        <message>
+            <location filename="PresentationSterlingMode/behavior.xar" line="0"/>
+            <source>I'm waking up right now</source>
+            <comment>Text</comment>
+            <translation type="unfinished">I'm waking up right now</translation>
+        </message>
+    </context>
+    <context>
+        <name>PresentationSterlingMode/behavior.xar:/DialogueModule/Dialog/ChangeImage/Say</name>
+        <message>
+            <location filename="PresentationSterlingMode/behavior.xar" line="0"/>
+            <source>The best place is the main corridor. The glass roof let's you to know where is the Sun located, so you can praise it while bathing in sunlight.</source>
+            <comment>Text</comment>
+            <translation type="unfinished">The best place is the main corridor. The glass roof let's you to know where is the Sun located, so you can praise it while bathing in sunlight.</translation>
+        </message>
+    </context>
+    <context>
+        <name>PresentationSterlingMode/behavior.xar:/DialogueModule/Dialog/PraiseTheSun (1)/Say</name>
+        <message>
+            <location filename="PresentationSterlingMode/behavior.xar" line="0"/>
+            <source>Praise the sun</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Praise the sun</translation>
+        </message>
+    </context>
+    <context>
+        <name>PresentationSterlingMode/behavior.xar:/DialogueModule/Dialog/PraiseTheSun/Say</name>
+        <message>
+            <location filename="PresentationSterlingMode/behavior.xar" line="0"/>
+            <source>Praise the sun</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Praise the sun</translation>
+        </message>
+    </context>
+    <context>
+        <name>PresentationSterlingMode/behavior.xar:/DialogueModule/Face Learner/Say</name>
+        <message>
+            <location filename="PresentationSterlingMode/behavior.xar" line="0"/>
+            <source>Hello, what is your name?</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Hello, what is your name?</translation>
+        </message>
+    </context>
+    <context>
+        <name>PresentationSterlingMode/behavior.xar:/DialogueModule/Face Learner/Say (1)</name>
+        <message>
+            <location filename="PresentationSterlingMode/behavior.xar" line="0"/>
+            <source>Nice to meet you</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Nice to meet you</translation>
+        </message>
+    </context>
+    <context>
+        <name>PresentationSterlingMode/behavior.xar:/DialogueModule/Face Learner/Say (2)</name>
+        <message>
+            <location filename="PresentationSterlingMode/behavior.xar" line="0"/>
+            <source>I can't frame thou fearful symmetry</source>
+            <comment>Text</comment>
+            <translation type="unfinished">I can't frame thou fearful symmetry</translation>
+        </message>
+    </context>
+    <context>
+        <name>PresentationSterlingMode/behavior.xar:/DialogueModule/Greet Known/Praise together</name>
+        <message>
+            <location filename="PresentationSterlingMode/behavior.xar" line="0"/>
+            <source>Let's praise the Sun together</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Let's praise the Sun together</translation>
+        </message>
+    </context>
+    <context>
+        <name>PresentationSterlingMode/behavior.xar:/DialogueModule/Greet Known/PraiseTheSun/Say</name>
+        <message>
+            <location filename="PresentationSterlingMode/behavior.xar" line="0"/>
+            <source>Praise the sun</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Praise the sun</translation>
+        </message>
+    </context>
+    <context>
+        <name>PresentationSterlingMode/behavior.xar:/DialogueModule/Greet unknown/Say</name>
+        <message>
+            <location filename="PresentationSterlingMode/behavior.xar" line="0"/>
+            <source>Hello are you a student?</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Hello are you a student?</translation>
+        </message>
+    </context>
+    <context>
+        <name>PresentationSterlingMode/behavior.xar:/DialogueModule/Say</name>
+        <message>
+            <location filename="PresentationSterlingMode/behavior.xar" line="0"/>
+            <source>Let's talk about the Sun. Ask me for help if you don't know what to ask.</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Let's talk about the Sun. Ask me for help if you don't know what to ask.</translation>
         </message>
     </context>
     <context>
@@ -915,6 +999,33 @@
             <source>Hi! Ask me about anything PC related!</source>
             <comment>Text</comment>
             <translation type="obsolete">Hi! Ask me about anything PC related!</translation>
+        </message>
+    </context>
+    <context>
+        <name>PresentationSterlingMode/behavior.xar:/VersionTwo/Move To</name>
+        <message>
+            <location filename="PresentationSterlingMode/behavior.xar" line="0"/>
+            <source>I will now follow you</source>
+            <comment>Text</comment>
+            <translation type="unfinished">I will now follow you</translation>
+        </message>
+    </context>
+    <context>
+        <name>PresentationSterlingMode/behavior.xar:/VersionTwo/Say</name>
+        <message>
+            <location filename="PresentationSterlingMode/behavior.xar" line="0"/>
+            <source>I will now follow you</source>
+            <comment>Text</comment>
+            <translation type="unfinished">I will now follow you</translation>
+        </message>
+    </context>
+    <context>
+        <name>PresentationSterlingMode/behavior.xar:/VersionTwo/Whoops</name>
+        <message>
+            <location filename="PresentationSterlingMode/behavior.xar" line="0"/>
+            <source>whoops</source>
+            <comment>Text</comment>
+            <translation type="unfinished">whoops</translation>
         </message>
     </context>
     <context>

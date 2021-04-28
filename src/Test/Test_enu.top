@@ -1,0 +1,37 @@
+topic: ~Test()
+language: enu
+
+# Defining extra concepts out of words or group of words
+#concept:(hello) [hello hi hey "good morning" greetings]
+
+# Catching inputs and triggering outputs
+#u:(e:onStart) $onStopped=1
+
+# Replying to speech
+#u:(~hello) ~hello
+
+#1.  "\vol=value\" (value between 0 and 100) : changes the volume of TTS. The default value is 80, and values above can introduce clipping to the audio signal.
+
+#2.  "\rspd=value\" (value between 50 and 400) : changes the speed of TTS (default value is 100).
+
+#3.  "\vct=value\" (value between 50 and 200) : changes the pitch of TTS (default value is 100).
+
+#4. “\rst\” : resets all parameters to the default values
+
+#5.  "\emph=value\" : changes the emphasis of TTS for the word following the tag
+#    1. 0: reduced
+#    2. 1: stressed
+#    3. 2: accented
+    
+#6.  “\bound=value\” : changes the prosodic boundary after the next word (all languages but Japanese)
+#    4. W: Weak phrase boundary (equivalent to a comma, but without the small pause)
+#    5. S: Strong phrase boundary (equivalent to a comma)
+#    6. N: No boundary (suppresses a boundary set by TTS)
+    
+#7.  “\eos=value\” : suppresses (value=0) or forces (value=1) a sentence break (all languages but Japanese)
+
+#This means that we can definitely use pepper within the presentation if we wanted to...
+
+
+u:(e:onStart) Under Louis the 14th's reign, in the great city of Paris \pau=300\ the cardinal is plotting. \pau=500\ The bravest of the musketeers \pau=10\ is fighting for lost causes and the love of his life.
+

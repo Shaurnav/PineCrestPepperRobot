@@ -1,7 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <package version="0.0.0">
+ <supportedLanguages>
+  <language>en_US</language>
+ </supportedLanguages>
  <descriptionLanguages>
   <language>en_US</language>
  </descriptionLanguages>
- <contents/>
+ <contents>
+  <dialogContent topicName="Test" typeVersion="1.0">
+   <topic path="Test/Test_enu.top" language="en_US"/>
+  </dialogContent>
+ </contents>
 </package>

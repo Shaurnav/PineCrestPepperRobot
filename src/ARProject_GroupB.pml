@@ -14,6 +14,8 @@
         <Dialog name="Dialogue_Sun" src="Dialogue_Sun/Dialogue_Sun.dlg" />
         <Dialog name="PresentationTopic" src="PresentationTopic/PresentationTopic.dlg" />
         <Dialog name="ExampleDialog" src="NaoMarkDetection/ExampleDialog/ExampleDialog.dlg" />
+        <Dialog name="Test" src="Test/Test.dlg" />
+        <Dialog name="Greeter" src="Greeter/Greeter.dlg" />
     </Dialogs>
     <Resources>
         <File name="SunImage" src="html/SunImage.png" />
@@ -23,6 +25,8 @@
         <Topic name="Dialogue_Sun_enu" src="Dialogue_Sun/Dialogue_Sun_enu.top" topicName="" language="" />
         <Topic name="ExampleDialog_enu" src="NaoMarkDetection/ExampleDialog/ExampleDialog_enu.top" topicName="ExampleDialog" language="en_US" />
         <Topic name="PresentationTopic_enu" src="PresentationTopic/PresentationTopic_enu.top" topicName="PresentationTopic" language="en_US" />
+        <Topic name="Test_enu" src="Test/Test_enu.top" topicName="Test" language="en_US" />
+        <Topic name="Greeter_enu" src="Greeter/Greeter_enu.top" topicName="Greeter" language="en_US" />
     </Topics>
     <IgnoredPaths />
     <Translations auto-fill="en_US">
