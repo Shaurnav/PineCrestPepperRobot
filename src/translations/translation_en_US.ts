@@ -22,10 +22,15 @@
             <translation type="obsolete">I forgot everyone's fac</translation>
         </message>
         <message>
-            <location filename="CustomFaces/behavior.xar" line="0"/>
             <source>I forgot the face</source>
             <comment>Text</comment>
-            <translation type="unfinished">I forgot the face</translation>
+            <translation type="obsolete">I forgot the face</translation>
+        </message>
+        <message>
+            <location filename="CustomFaces/behavior.xar" line="0"/>
+            <source>I forgot your face!</source>
+            <comment>Text</comment>
+            <translation type="unfinished"></translation>
         </message>
     </context>
     <context>
@@ -383,19 +388,17 @@
             <translation type="obsolete">Mesame tamae, vaga aruyi taki yo</translation>
         </message>
         <message>
-            <location filename="FollowCome/behavior.xar" line="0"/>
             <source>Language will be english</source>
             <comment>Text</comment>
-            <translation type="unfinished">Language will be english</translation>
+            <translation type="obsolete">Language will be english</translation>
         </message>
     </context>
     <context>
         <name>FollowCome/behavior.xar:/Come Here Actions/Blind</name>
         <message>
-            <location filename="FollowCome/behavior.xar" line="0"/>
             <source>I am blind</source>
             <comment>Text</comment>
-            <translation type="unfinished">I am blind</translation>
+            <translation type="obsolete">I am blind</translation>
         </message>
     </context>
     <context>
@@ -835,6 +838,11 @@
             <comment>Text</comment>
             <translation type="obsolete">There's no way I can connect to this from here</translation>
         </message>
+        <message>
+            <source>I, lost, you</source>
+            <comment>Text</comment>
+            <translation type="obsolete">I, lost, you</translation>
+        </message>
     </context>
     <context>
         <name>Presentation/behavior.xar:/Say (1)</name>
@@ -842,6 +850,16 @@
             <source>Done</source>
             <comment>Text</comment>
             <translation type="obsolete">Done</translation>
+        </message>
+        <message>
+            <source>Hello</source>
+            <comment>Text</comment>
+            <translation type="vanished">Hello</translation>
+        </message>
+        <message>
+            <source>I found you!!!</source>
+            <comment>Text</comment>
+            <translation type="obsolete">I found you!!!</translation>
         </message>
     </context>
     <context>

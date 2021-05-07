@@ -33,5 +33,5 @@ language: enu
 #This means that we can definitely use pepper within the presentation if we wanted to...
 
 
-u:(e:onStart) Under Louis the 14th's reign, in the great city of Paris \pau=300\ the cardinal is plotting. \pau=500\ The bravest of the musketeers \pau=10\ is fighting for lost causes and the love of his life.
+u:(move) Ok I will try my best! $onMove=1
 

@@ -29,7 +29,7 @@
         <Topic name="Greeter_enu" src="Greeter/Greeter_enu.top" topicName="Greeter" language="en_US" />
     </Topics>
     <IgnoredPaths />
-    <Translations auto-fill="en_US">
+    <Translations>
         <Translation name="translation_en_US" src="translations/translation_en_US.ts" language="en_US" />
     </Translations>
 </Package>
