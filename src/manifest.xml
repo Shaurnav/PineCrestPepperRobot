@@ -1,9 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <package version="0.0.0">
+ <supportedLanguages>
+  <language>es_ES</language>
+ </supportedLanguages>
  <descriptionLanguages>
   <language>en_US</language>
+  <language>es_ES</language>
  </descriptionLanguages>
  <contents>
   <dialogContent topicName="Test" typeVersion="1.0"/>
+  <dialogContent topicName="Dialogue_Sun" typeVersion="1.0">
+   <topic language="en_US" path="Dialogue_Sun/Dialogue_Sun_enu.top"/>
+   <topic language="es_ES" path="Dialogue_Sun/Dialogue_Sun_spe.top"/>
+  </dialogContent>
  </contents>
 </package>

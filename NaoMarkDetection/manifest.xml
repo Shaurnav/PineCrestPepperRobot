@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<package version="0.0.0" uuid="demoproject-30d9eb">
+<package uuid="naomarkdetection-203ed0" version="0.0.0">
  <names>
-  <name lang="en_US">Untitled</name>
+  <name lang="en_US">NaoMarkDetection</name>
  </names>
  <supportedLanguages>
   <language>en_US</language>
@@ -15,13 +15,12 @@
    <nature>interactive</nature>
    <permissions/>
   </behaviorContent>
-  <behaviorContent path="DanceParty">
-   <nature>interactive</nature>
-   <permissions/>
-  </behaviorContent>
-  <behaviorContent path="ImportedBehavior">
-   <nature>interactive</nature>
-   <permissions/>
-  </behaviorContent>
+  <dialogContent topicName="PresentationTopic" typeVersion="1.0">
+   <topic path="PresentationTopic/PresentationTopic_enu.top" language="en_US"/>
+  </dialogContent>
  </contents>
+ <requirements>
+  <naoqiRequirement/>
+  <robotRequirement/>
+ </requirements>
 </package>

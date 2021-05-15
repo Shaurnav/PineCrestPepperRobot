@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="0.0.1" uuid="demoproject-30d9eb">
+ <names>
+  <name lang="en_US">DemoProject</name>
+ </names>
+ <supportedLanguages>
+  <language>en_US</language>
+  <language>es_ES</language>
+ </supportedLanguages>
+ <descriptionLanguages>
+  <language>en_US</language>
+  <language>es_ES</language>
+  <language>fi_FI</language>
+ </descriptionLanguages>
+ <contents>
+  <behaviorContent path="behavior_1">
+   <userRequestable/>
+   <nature>interactive</nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="DanceParty">
+   <nature>interactive</nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="ImportedBehavior">
+   <nature>interactive</nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="PlayingWithSpanish">
+   <nature>interactive</nature>
+   <permissions/>
+  </behaviorContent>
+ </contents>
+ <requirements>
+  <naoqiRequirement/>
+  <robotRequirement/>
+ </requirements>
+</package>

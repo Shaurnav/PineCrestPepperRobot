@@ -22,14 +22,14 @@
         <File name="plano2500" src="html/plano2500.png" />
     </Resources>
     <Topics>
-        <Topic name="Dialogue_Sun_enu" src="Dialogue_Sun/Dialogue_Sun_enu.top" topicName="" language="" />
         <Topic name="ExampleDialog_enu" src="NaoMarkDetection/ExampleDialog/ExampleDialog_enu.top" topicName="ExampleDialog" language="en_US" />
         <Topic name="PresentationTopic_enu" src="PresentationTopic/PresentationTopic_enu.top" topicName="PresentationTopic" language="en_US" />
         <Topic name="Test_enu" src="Test/Test_enu.top" topicName="Test" language="en_US" />
         <Topic name="Greeter_enu" src="Greeter/Greeter_enu.top" topicName="Greeter" language="en_US" />
+        <Topic name="Dialogue_Sun_spe" src="Dialogue_Sun/Dialogue_Sun_spe.top" topicName="Dialogue_Sun" language="es_ES" />
     </Topics>
     <IgnoredPaths />
-    <Translations>
-        <Translation name="translation_en_US" src="translations/translation_en_US.ts" language="en_US" />
+    <Translations auto-fill="es_ES">
+        <Translation name="translation_es_ES" src="translations/translation_es_ES.ts" language="es_ES" />
     </Translations>
 </Package>

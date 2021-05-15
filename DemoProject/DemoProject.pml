@@ -5,6 +5,7 @@
         <BehaviorDescription name="behavior" src="behavior_1" xar="behavior.xar" />
         <BehaviorDescription name="behavior" src="DanceParty" xar="behavior.xar" />
         <BehaviorDescription name="behavior" src="ImportedBehavior" xar="behavior.xar" />
+        <BehaviorDescription name="behavior" src="PlayingWithSpanish" xar="behavior.xar" />
     </BehaviorDescriptions>
     <Dialogs />
     <Resources>
@@ -18,5 +19,6 @@
     <IgnoredPaths />
     <Translations auto-fill="en_US">
         <Translation name="translation_en_US" src="translations/translation_en_US.ts" language="en_US" />
+        <Translation name="translation_es_ES" src="translations/translation_es_ES.ts" language="es_ES" />
     </Translations>
 </Package>
