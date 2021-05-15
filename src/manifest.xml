@@ -10,8 +10,8 @@
  <contents>
   <dialogContent topicName="Test" typeVersion="1.0"/>
   <dialogContent topicName="Dialogue_Sun" typeVersion="1.0">
-   <topic language="en_US" path="Dialogue_Sun/Dialogue_Sun_enu.top"/>
-   <topic language="es_ES" path="Dialogue_Sun/Dialogue_Sun_spe.top"/>
+   <topic path="Dialogue_Sun/Dialogue_Sun_enu.top" language="en_US"/>
+   <topic path="Dialogue_Sun/Dialogue_Sun_spe.top" language="es_ES"/>
   </dialogContent>
  </contents>
 </package>
