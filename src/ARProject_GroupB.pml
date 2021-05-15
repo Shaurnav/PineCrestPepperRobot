@@ -29,7 +29,7 @@
         <Topic name="Dialogue_Sun_spe" src="Dialogue_Sun/Dialogue_Sun_spe.top" topicName="Dialogue_Sun" language="es_ES" />
     </Topics>
     <IgnoredPaths />
-    <Translations auto-fill="es_ES">
-        <Translation name="translation_es_ES" src="translations/translation_es_ES.ts" language="es_ES" />
+    <Translations auto-fill="en_US">
+        <Translation name="translation_en_US" src="translations/translation_en_US.ts" language="en_US" />
     </Translations>
 </Package>

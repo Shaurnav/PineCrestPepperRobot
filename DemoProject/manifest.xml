@@ -16,6 +16,9 @@
   <behaviorContent path="behavior_1">
    <userRequestable/>
    <nature>interactive</nature>
+   <triggerSentences/>
+   <loadingResponses/>
+   <autonomous/>
    <permissions/>
   </behaviorContent>
   <behaviorContent path="DanceParty">
@@ -28,6 +31,13 @@
   </behaviorContent>
   <behaviorContent path="PlayingWithSpanish">
    <nature>interactive</nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Dialogue_test">
+   <nature>interactive</nature>
+   <triggerSentences/>
+   <loadingResponses/>
+   <autonomous/>
    <permissions/>
   </behaviorContent>
  </contents>

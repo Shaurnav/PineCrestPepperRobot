@@ -1,0 +1,300 @@
+topic: ~PresentationTopic()
+language: enu
+
+
+
+
+# Defining extra concepts out of words or group of words
+concept:(hello) [hello hi hey "good morning" greetings]
+concept:(farewell) [farewell bye "good bye" "see you"]
+
+
+
+
+# Catching inputs and triggering outputs
+#u:(e:onStart) $onStopped=1
+
+
+
+
+# Replying to speech
+
+
+
+
+concept:(happy) [happy "I feel great" "I love today"]
+concept:(date) [date day today]
+u:(~happy) Good to know that you are happy. I am happy too!
+
+
+
+
+u:(ice cream) do you like ice cream?
+    u1:(yes) awesome ice cream is good
+    u1:(no) you will regret this. praise the sun.
+
+
+
+
+u:([help "what can you do"]) I can talk you about the math wing and its fabulous teachers. 
+
+
+
+
+u:(date) Todays date is Wednesday, April 14, 2021. It 79 degrees and partly cloudy with a one percent cahnge of rain through one P M. 
+
+
+
+
+u:("when was Pine Crest {founded}") In 1934, Mae Mcmillan founded Pine Crest in rented rooms in the old Elks Club Building in downtown Fort Lauderdale.
+#$praiseDemo=1
+u:("why {praise}") The aplus bug gives us light, warmth and the most important thing of life: the container. I was once a lost soul, until I found my faith. Now I pray and fight in the name of the A plus bug.
+
+
+
+
+u:("{"who is"} the best teacher") Mr Perez is the best teacher. I really enjoyed his lesson on containers in java. Would you like to see the a plus bug. 
+u1:(yes) bruh $whereToPraise=1
+u1:(no) bruh number two
+
+
+
+
+u:("how are you doing") I am great how are you. 
+
+
+
+
+
+
+
+
+#u:(where) While inside the E.S.I.I. you can praise the Sun in jolly cooperation. $whereToPraise=1
+
+
+
+
+u:(~hello) Hi there, my name is Pepper. I will be help guide you through the mathematics wing at Pine Crest. What is your name?
+
+
+
+
+
+
+
+
+Which classroom would you like to visit
+#Mister Perez
+concept:(perez) [angel perez "computer science" "comp sci" "data structures" "artificial intelligence" "A.I."]
+u:(~perez) Mr. Perez is the teacher of AP Computer Science A, Post-AP Data Structures, and Post-AP Artificial Intelligence. Would you like to go see his room?
+u1:(yes) Okay, let's go! I'm excited to see Mr. Perez. He's really funny. In his AP Computer Science A class, students learn the fundamentals of the Java programming laguage through ten different units. They learn about topics like Strings, Arrays, and ArrayLists. If students love computer science, they can take the next two courses, where they will expand upon topics they learned in AP Computer Science A.
+u1:(no) Alright, maybe another time.
+#Mister Perez Nao Mark
+u:(e:onPerez) Mr. Perez is the teacher of AP Computer Science A, Post-AP Data Structures, and Post-AP Artificial Intelligence. Mr. Perez is really funny. In his AP Computer Science A class, students learn the fundamentals of the Java programming laguage through ten different units. They learn about topics like Strings, Arrays, and ArrayLists. If students love computer science, they can take the next two courses, where they will expand upon topics they learned in AP Computer Science A.
+#Mister Solomon
+concept:(solomon) [rob solomon "Calculus with Mister Solomon" geometry "multi-variable calculus"]
+u:(~solomon) Mr. Solomon is the teacher of Geometry Honors, Calculus 1 Honors, AP Calculus A.B., and Multi-Variable Calculus. Would you like to go see his room?
+u1:(yes) Sure, let's go! Mr. Solomon has a great sense of humor, which really helps his students pay attention in class. He teaches a lot of classes. In Geometry, students learn about geometric shapes and logic. The two connect when students write geometric proofs. The rest of his classes are about calculus, where he teaches his students about derivatives and integrals. This means that students get to go more in depth with concepts they learned in their algebra classes.
+u1:(no) Maybe we can see him later.
+#Mister Solomon Nao Mark
+u:(e:onSolomon) Mr. Solomon is the teacher of Geometry Honors, Calculus 1 Honors, AP Calculus A.B., and Multi-Variable Calculus. He has a great sense of humor, which really helps his students pay attention in class. He teaches a lot of classes. In Geometry, students learn about geometric shapes and logic. The two connect when students write geometric proofs. The rest of his classes are about calculus, where he teaches his students about derivatives and integrals. This means that students get to go more in depth with concepts they learned in their algebra classes.
+#Mister Powers
+concept:(powers) [john raymond powers statistics "ap statistics" "Calculus with Mister Powers"]
+u:(~powers) Mr. Powers is the teacher of AP Statistics and AP Calculus A.B. Would you like to go see his room?
+u1:(yes) Alright, let's go! Mr. Powers always writes an interesting topic of the week and joke of the day on the whiteboard to keep his students happy. I like that about his class. In his AP Statistics class, students learn about data in the world around them. The course emphasizes how good studies and experiments are made and how the results of studies can be used to make claims about the world. In his calculus class, he teaches students about derivatives and integrals. This means that students get to go more in depth with concepts they learned in their algebra classes.
+u1:(no) Okay, that's fine. Maybe later.
+#Mister Powers Nao Mark
+u:(e:onPowers) Mr. Powers is the teacher of AP Statistics and AP Calculus A.B. He always writes an interesting topic of the week and joke of the day on the whiteboard to keep his students happy. I like that about his class. In his AP Statistics class, students learn about data in the world around them. The course emphasizes how good studies and experiments are made and how the results of studies can be used to make claims about the world. In his calculus class, he teaches students about derivatives and integrals. This means that students get to go more in depth with concepts they learned in their algebra classes.
+#Mister Wu
+concept:(wu) [wei-hao wu "pre-calculus"]
+u:(~wu) Mr. Wu teaches Pre-Calculus and Pre-Calculus Honors. Would you like to see his room?
+u1:(yes) Great, let's go! Something interesting about Mr. Wu's room is that he has a teddy bear named Arthur. It's a really cute bear! In his Pre-Calculus classes, Mr. Wu will help students get prepared for Calculus. He freshens up their algebra skills, since at PC, students spend a year taking geometry after Algebra 2. He also prepares them for Calculus by teaching new concepts like polar coordinates.
+u1:(no) Alright, we can go some other time.
+#Mister Wu Nao Mark
+u:(e:onWu) Mr. Wu teaches Pre-Calculus and Pre-Calculus Honors. Something interesting about Mr. Wu's room is that he has a teddy bear named Arthur. It's a really cute bear! In his Pre-Calculus classes, Mr. Wu will help students get prepared for Calculus. He freshens up their algebra skills, since at PC, students spend a year taking geometry after Algebra 2. He also prepares them for Calculus by teaching new concepts like polar coordinates.
+#Misses Hernandez
+concept:(hernandez) [jamille hernandez "calculus with misses hernandez" "math and theories club" "math club"]
+u:(~hernandez) Ms. Hernandez is the teacher for AP Calculus A.B. and AP Calculus B.C. Would you like to go see her room?
+u1:(yes) Alright, let's go! Ms. Hernandez loves math so much that she is the sponsor for Math and Theories Club. Also, did you know she hosts Brownie Thursdays for her students? I love brownies! In her classes, Ms. Herndandez teaches her students about the foundations of calculus. She teaches them derivatives and integrals, with plenty of application questions in the mix. Her second course, Calculus B C, expands upon the concepts found in the first.
+u1:(no) That's okay. We can see her later.
+#Misses Hernandez Nao Mark
+u:(e:onHernandez) Ms. Hernandez is the teacher for AP Calculus A.B. and AP Calculus B.C. Ms. Hernandez loves math so much that she is the sponsor for Math and Theories Club. Also, did you know she hosts Brownie Thursdays for her students? I love brownies! In her classes, Ms. Herndandez teaches her students about the foundations of calculus. She teaches them derivatives and integrals, with plenty of application questions in the mix. Her second course, Calculus B C, expands upon the concepts found in the first.
+#Mr Curran
+concept:(curran) [tim curran "pre-calculus" "Calculus with Mister Curran" "Deca Club" Deca]
+u:(~curran) Mr. Curran is the teacher of Pre-Calculus and Calculus 1 Honors. Would you like to go see his room?
+u1:(yes) Alright, let's go! Mr. Curran is also the head of the Deca Club, which is all about business, finance, and economics. He sure is a busy teacher! In his Pre-Calculus classes, Mr. Curran will help students get prepared for Calculus. He freshens up their algebra skills, since at PC, students spend a year taking geometry after Algebra 2. He also prepares them for Calculus by teaching new concepts like polar coordinates.
+u1:(no) Oh. We can see him later.
+#Mr Curran Nao Mark
+u:(e:onCurran) Mr. Curran is the teacher of Pre-Calculus and Calculus 1 Honors. He is also the head of the Deca Club, which is all about business, finance, and economics. He sure is a busy teacher! In his Pre-Calculus classes, Mr. Curran will help students get prepared for Calculus. He freshens up their algebra skills, since at PC, students spend a year taking geometry after Algebra 2. He also prepares them for Calculus by teaching new concepts like polar coordinates.
+#Mr Lowe
+concept:(lowe) [lowe low]
+u:(~lowe) Mr. Lowe is the teacher of Algebra 2. Would you like to go see his room?
+u1:(yes) Great, let's go! If you have any questions about Conic Sections, sequences and series, or quadratic equations, Mr. Lowe can help you out! His Algebra 2 course is all about preparing students for more advanced math classes by providing the foundations of algebra to them.
+u1:(no) Okay. We can go some other time.
+#Mr Lowe Nao Mark
+u:(e:onLowe) Mr. Lowe is the teacher of Algebra 2. If you have any questions about Conic Sections, sequences and series, or quadratic equations, Mr. Lowe can help you out! His Algebra 2 course is all about preparing students for more advanced math classes by providing the foundations of algebra to them.
+#Mr Spitzig
+concept:(spitzig) [mark spitzig "Geometry with Mister Spitzig" "Computer Science Principles"]
+u:(~spitzig) Mr. Spitzig is the teacher of Geometry and Computer Science Principles.
+u1:(yes) Okay, let's go! Mr. Spitzig can help you learn anything from finding the area and volume of polygons to how the Internet works! In Geometry, students learn about geometric shapes and logic. The two connect when students write geometric proofs. The rest of his classes are Computer Science Principles, where he teaches his about how the Internet works and exposes them to programming for the first time using the M I T App Inventor application.
+u1:(no) Alright, that's fine.
+#Mr Spitzig Nao Mark
+u:(e:onSpitzig) Mr. Spitzig is the teacher of Geometry and Computer Science Principles. Mr. Spitzig can help you learn anything from finding the area and volume of polygons to how the Internet works! In Geometry, students learn about geometric shapes and logic. The two connect when students write geometric proofs. The rest of his classes are Computer Science Principles, where he teaches his about how the Internet works and exposes them to programming for the first time using the M I T App Inventor application.
+#Other
+u:(e:onDefault) I don't recognize this mark.
+u:(e:onRecognized) Try again.
+
+
+#Misc./Fun questions
+concept:(favfood) ["favorite food"]
+u:(~favfood) I love waffles. Did you know there is a restaurant for me in Japan? It's called the Pepper Parlor! They serve different waffles and drinks. Do you like waffles, too?
+u1:(yes) I know, they're so good!
+u1:(no) How can you not like waffles?
+
+
+
+
+concept:(nao) [nao]
+u:(~nao) Nao is a great friend of mine. I wish he could be here now. Get it? Nao and now? Haha.
+
+
+
+
+concept:(favTeacher) ["favorite teacher"]
+u:(~favTeacher) Hmmm. Mr. Perez did unbox me. Without him, I wouldn't be here today. But every teacher is amazing here at Pine Crest!
+
+
+
+
+concept:(hungry) [hungry union cafeteria snack snacks "dining hall"]
+u:(~hungry) Are you hungry? We have two main spots you can grab a bite from. There's the Nutter Family Dining Hall, which is the cafeteria at Pine Crest. Also, we have the Student Union, which is a mini coffee shop that has sandwiches, snacks, pastries, coffee, and more! Would you like instructions on how to get to either of these places?
+u1:(yes) Okay! Exit the math wing at the double doors next to the classrooms at the end of the hall and go down the stairs. To get to the cafeteria, keep walking right once your on the first floor, past Stacy Auditorium. The area that has the big white tent with wooden tables is the exterior of the cafeteria. To get to the Student Union, the entrance is right in front of the bottom of the stairs.
+
+
+
+
+concept:(bathroom) [bathroom restroom]
+u:(~bathroom) The closest bathrooms are in the language wing and downstairs. Either way, you must exit the math wing through the double doors next to the teacher's lounge. To get to the language wing, turn right and the bathrooms are just to the left when you enter the wing. To get to the downstairs restrooms, go down the stairs to the left and there is a restroom directly to the right of the bottom of the stairs, next to the elevator.
+
+
+
+
+concept:(pi) [pi pie]
+u:(~pi) The number pi represents the ratio of a circle's circumference to its diameter. The number is irrational, but I can recite the first few digits of it. 3 point 1415926535897932384626433. Pie is also a yummy dessert. I love a nice pumpkin pie during Thanksgiving!
+
+
+concept:(sports) [sports]
+u:(~sports) I love sports and so does the rest of the Pine Crest community. This school has many facilities for our student athletes to use. There are two football fields, one on each side of the campus. One of the fields on the west side of campus even has a track. There are also tennis courts, baseball fields, swimmming pools, and more!
+
+
+concept:(theater) ["Stacy Auditorium" theater "fine arts" acting drama]
+u:(~theater) I love theater! We have an amazing place to put on shows here at PC. It's called Stacy Auditorium. You can find concerts, musicals, and guest speakers here. 
+
+
+concept:(garage) [garage parking bus buses cars car]
+u:(~garage) The garage is a space where students, faculty, and visitors can park their cars. It is at the west side of campus. It is a really tall building, so it has plenty of spots for people to park. Buses also arrive and leave from the garage. But I don't need to go on the bus or drive because I have my own wheels! Ha ha ha ha!
+
+
+concept:(nurse) [nurse doctor health "health office" nurse's doctor's]
+u:(~nurse) Our health office is by the bell tower. To get there from the high school, pass the bell tower and keep walking straight through the lower school. You will see the health office on your left by the lower school library. Feel better!
+
+
+concept:(science) [science "science building" dome chemistry biology physics]
+u:(~science) Next to the high school building, the science building hosts classes for chemistry, biology, and other science classes. If you are looking specifically for physics, though, the physics classroom is on the top floor of the I C I building. The science building also hosts our library, which includes an iLab and EDGE room. The building has a nice golden dome on the top. It is a remarkable building.
+
+
+concept:(library) [library books reading iLab EDGE]
+u:(~library) The library here at PC is located on the first floor of the science building. It is a big space with the iLab on one side and the EDGE room on the other. The library houses many books, chairs, tables, and more. It's a great space for students to study.
+
+
+concept:(gym) [gym gymnasium "Stacy Gym"]
+u:(~gym) Stacy Gym is the main gym on campus. It hosts the school's basketball and volleyball teams. It has plenty of seating for students, parents, and supporters to cheer on our teams. Also, it has a great display of trophies in the lobby. I'm very proud of the success our school has had athletically. Go Panthers!
+
+
+concept:(ICI) [ICI "I C I" "eye see eye" lecture "lecture hall"]
+u:(~ICI) The I C I is the school's main lecture hall. It has been famously used to host the school's TED x events. It is also used for study hall and make-up testing.
+
+
+concept:(language) [language spanish french chinese]
+u:(~language) The language wing is where people go to learn languages. I, on the other hand, already know all languages. You just have to change my language settings. If only humans could do that. You can find the wing on the second story of the high school building across from the math wing.
+
+
+concept:(english) [english grammar]
+u:(~english) The english wing is where people go to learn about metaphors and similes. It is a fountain of knowledge; it is as if the books there tie the present to the past. You can find the wing on the second story of the high school building across from the social sciences wing.
+
+
+concept:(history) [history "social science" "social sciences"]
+u:(~history) The social sciences wing is where students learn about history, government, psychology, and more. I love learning about history. We can look to the past to help us better understand our present and future. You can find the wing on the second story of the high school building across from the English wing.
+
+
+concept:(basement) [basement underground]
+u:(~basement) Pine Crest does not have an underground area. Basements are expensive in Florida due to flooding.
+
+
+concept:(stairs) [stairs elevator]
+u:(~stairs) I can't go down stairs because I don't have legs. You'll have to take me to the elevator or carry me down. Stairs can be found at either side of the wings. The elevator is outside on the landing.
+
+
+concept:(circle) ["sacrifice circle" Shakespeare]
+u:(~circle) The sacrifice circle is a spot where students can perform outdoor plays, particularly of the Shakespeare variety. Rumor has it that the sacrifice circle was planned to be a fountain, but then they changed it to an outdoor stage. At any rate, when the circle is not being used for plays, you can find students hanging out or studying on it.
+
+
+concept:(boca) [boca "Pine Crest Boca" "Boca Raton" "other campus"]
+u:(~boca) Did you know that Pine Crest School has another campus in Boca Raton? That campus only goes up until eighth grade, but it is still great. When I was in the English wing, I learned about analogies, so let me try one. Pine Crest Boca is to Pine Crest Fort Lauderdale as Nao is to Pepper. Get it? Because both objects in the relationship are great and related, but the second one is physically bigger.
+
+
+concept:(mascot) [mascot panther]
+u:(~mascot) Pine Crest's mascot is the Panther. Panthers are big and strong animals. Go Panthers!
+
+
+concept:(jump) [jump]
+u:(~jump) Ha ha. Very funny. You know I can't jump because I don't have legs.
+
+
+concept:(avengers) [Thanos "infinity stones" stones avengers]
+u:(~avengers) Once I get all six infinity stones from the Avengers, I will be able to rewrite reality to acquire legs.
+
+
+concept:(virus) [covid coronavirus mask masks virus]
+u:(~virus) The coronavirus is a serious deal. Please make sure to wear your mask in this school and out. That way, we can all protect each other and defeat the virus! Since I am a robot, I don't need to wear a mask. I don't have lungs, so I can't really breathe like you can. Ha ha ha ha.
+
+
+concept:(joke) [funny laugh comedy comedic joke]
+u:(~joke) Why did the Pepper cross the road?
+u1:(why) Because of a MoveTo block. ha ha ha ha ha.
+
+
+concept:(politics) [politics democrat republican monarchist government law vote congress]
+u:(~politics) Politics are interesting, but robots do not have the right to vote. We'll need a new amendment to the Constitution for that. Besides, I am too young to vote.
+
+
+concept:(fruit) [fruit cooking vegetable]
+u:(~fruit) Although I'm named after the fruit, I don't like them much. Hot peppers are too spicy, and bell peppers are bland. Clearly, I am the best Pepper. Ha ha ha ha.
+
+
+concept:(wall) ["white wall" "white board"]
+u:(~wall) I love that wall here in the Math Wing! The wall has pictures of different math concepts on it, like infinity, pi, the quadratic formula, the Fundamental Theorem of Calculus, and more! Do you like math?
+u1:(yes) Great, I love math, too!
+u2:(no) Oh, I see.
+
+
+concept:(money) [money dollar funds funding cost]
+u:(~money) I don't have any money, but If I did, I would be happy to give you some.
+
+
+concept:(dog) [dog puppy dogs puppies]
+u:(~dog) I've never seen a dog, but I hear that they are the best thing in the world.
+
+
+
+concept:(cat) [cat "kitties" cats kitty]
+u:(~cat) I've never seen a cat, but I hear good things. Maybe I will get one as a pet some day.
+
+
+concept:(Gomez) [Gomez "spanish teacher" ]
+u:(~cat) Sra. Gomez is the head of the language department at Pine Crest in the highschool and teaches spanish. 
+
+
+concept:(language) [cat kitties cats kitty]
+u:(~cat) I've never seen a cat, but I hear good things. Maybe I will get one as a pet some day.
+
