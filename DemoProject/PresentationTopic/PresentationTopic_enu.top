@@ -287,6 +287,14 @@ u:(~dog) I've never seen a dog, but I hear that they are the best thing in the w
 
 
 
-concept:(cat) [cat kitties cats kitty]
+concept:(cat) [cat "kitties" cats kitty]
 u:(~cat) I've never seen a cat, but I hear good things. Maybe I will get one as a pet some day.
- #test 
+
+
+concept:(Gomez) [Gomez "spanish teacher" ]
+u:(~cat) Sra. Gomez is the head of the language department at Pine Crest in the highschool and teaches spanish. 
+
+
+concept:(language) [cat kitties cats kitty]
+u:(~cat) I've never seen a cat, but I hear good things. Maybe I will get one as a pet some day.
+

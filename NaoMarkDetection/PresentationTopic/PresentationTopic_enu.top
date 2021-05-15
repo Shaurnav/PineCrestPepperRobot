@@ -142,7 +142,7 @@ u1:(no) Alright, that's fine.
 u:(e:onSpitzig) Mr. Spitzig is the teacher of Geometry and Computer Science Principles. Mr. Spitzig can help you learn anything from finding the area and volume of polygons to how the Internet works! In Geometry, students learn about geometric shapes and logic. The two connect when students write geometric proofs. The rest of his classes are Computer Science Principles, where he teaches his about how the Internet works and exposes them to programming for the first time using the M I T App Inventor application.
 #Other
 u:(e:onDefault) I don't recognize this mark.
-u:(e:onRecognized) Try again.
+u:(e:onRecngnized) Try again.
 
 
 #Misc./Fun questions
@@ -284,9 +284,3 @@ u:(~money) I don't have any money, but If I did, I would be happy to give you so
 
 concept:(dog) [dog puppy dogs puppies]
 u:(~dog) I've never seen a dog, but I hear that they are the best thing in the world.
-
-
-
-concept:(cat) [cat kitties cats kitty]
-u:(~cat) I've never seen a cat, but I hear good things. Maybe I will get one as a pet some day.
- #test 

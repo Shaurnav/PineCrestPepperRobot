@@ -106,6 +106,40 @@
         </message>
     </context>
     <context>
+        <name>PlayingWithSpanish/behavior.xar:/Say</name>
+        <message>
+            <source>Hello</source>
+            <comment>Text</comment>
+            <translation type="vanished">Hello</translation>
+        </message>
+        <message>
+            <source>Hello, how are you!</source>
+            <comment>Text</comment>
+            <translation type="vanished">Hello, how are you!</translation>
+        </message>
+        <message>
+            <source>Hello, how are you</source>
+            <comment>Text</comment>
+            <translation type="obsolete">Hello, how are you</translation>
+        </message>
+        <message>
+            <source>Holá comó estás!</source>
+            <comment>Text</comment>
+            <translation type="obsolete">Holá comó estás!</translation>
+        </message>
+        <message>
+            <source>olá comó estás!</source>
+            <comment>Text</comment>
+            <translation type="obsolete">olá comó estás!</translation>
+        </message>
+        <message>
+            <location filename="PlayingWithSpanish/behavior.xar" line="0"/>
+            <source>holá comó estás</source>
+            <comment>Text</comment>
+            <translation type="unfinished">holá comó estás</translation>
+        </message>
+    </context>
+    <context>
         <name>behavior_1/behavior.xar:/Animated Say</name>
         <message>
             <source>Hello</source>
@@ -189,6 +223,56 @@
             <source>SHEEESH</source>
             <comment>Text</comment>
             <translation type="obsolete">SHEEESH</translation>
+        </message>
+    </context>
+    <context>
+        <name>behavior_1/behavior.xar:/Come Here Actions/Say</name>
+        <message>
+            <location filename="behavior_1/behavior.xar" line="0"/>
+            <source>Hot stuff, comin' through!</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Hot stuff, comin' through!</translation>
+        </message>
+    </context>
+    <context>
+        <name>behavior_1/behavior.xar:/Come Here Actions/Say (2)</name>
+        <message>
+            <location filename="behavior_1/behavior.xar" line="0"/>
+            <source>I'm here</source>
+            <comment>Text</comment>
+            <translation type="unfinished">I'm here</translation>
+        </message>
+    </context>
+    <context>
+        <name>behavior_1/behavior.xar:/FollowActions/Say</name>
+        <message>
+            <location filename="behavior_1/behavior.xar" line="0"/>
+            <source>Say stop to... stop?</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Say stop to... stop?</translation>
+        </message>
+    </context>
+    <context>
+        <name>behavior_1/behavior.xar:/FollowActions/Say (1)</name>
+        <message>
+            <location filename="behavior_1/behavior.xar" line="0"/>
+            <source>I'm going to stop because I want to, not because you told me.</source>
+            <comment>Text</comment>
+            <translation type="unfinished">I'm going to stop because I want to, not because you told me.</translation>
+        </message>
+    </context>
+    <context>
+        <name>behavior_1/behavior.xar:/Say</name>
+        <message>
+            <source>I am a thristy boi</source>
+            <comment>Text</comment>
+            <translation type="obsolete">I am a thristy boi</translation>
+        </message>
+        <message>
+            <location filename="behavior_1/behavior.xar" line="0"/>
+            <source>Ok thanks for letting me follow you!</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Ok thanks for letting me follow you!</translation>
         </message>
     </context>
 </TS>
