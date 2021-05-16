@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<package uuid="naomarkdetection-203ed0" version="0.0.0">
+<package version="0.0.0" uuid="naomarkdetection-203ed0">
  <names>
   <name lang="en_US">NaoMarkDetection</name>
  </names>
@@ -16,7 +16,10 @@
    <permissions/>
   </behaviorContent>
   <dialogContent topicName="PresentationTopic" typeVersion="1.0">
-   <topic path="PresentationTopic/PresentationTopic_enu.top" language="en_US"/>
+   <topic language="en_US" path="PresentationTopic/PresentationTopic_enu.top"/>
+  </dialogContent>
+  <dialogContent topicName="where" typeVersion="1.0">
+   <topic language="en_US" path="where/where_enu.top"/>
   </dialogContent>
  </contents>
  <requirements>
