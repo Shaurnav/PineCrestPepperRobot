@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="0.0.0" uuid="greeter-b0ce05">
+ <names>
+  <name lang="en_US">Greeter</name>
+ </names>
+ <supportedLanguages>
+  <language>en_US</language>
+ </supportedLanguages>
+ <descriptionLanguages>
+  <language>en_US</language>
+ </descriptionLanguages>
+ <contents>
+  <behaviorContent path="GreeterBehavior">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <dialogContent topicName="GreeterDialog" typeVersion="1.0">
+   <topic language="en_US" path="GreeterDialog/GreeterDialog_enu.top"/>
+  </dialogContent>
+  <dialogContent topicName="FollowMeDialog" typeVersion="1.0">
+   <topic language="en_US" path="FollowMeDialog/FollowMeDialog_enu.top"/>
+  </dialogContent>
+ </contents>
+</package>
