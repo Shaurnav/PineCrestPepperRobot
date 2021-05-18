@@ -14,10 +14,10 @@
    <nature></nature>
    <permissions/>
   </behaviorContent>
-  <dialogContent topicName="GreeterDialog" typeVersion="1.0">
+  <dialogContent typeVersion="1.0" topicName="GreeterDialog">
    <topic language="en_US" path="GreeterDialog/GreeterDialog_enu.top"/>
   </dialogContent>
-  <dialogContent topicName="FollowMeDialog" typeVersion="1.0">
+  <dialogContent typeVersion="1.0" topicName="FollowMeDialog">
    <topic language="en_US" path="FollowMeDialog/FollowMeDialog_enu.top"/>
   </dialogContent>
  </contents>
