@@ -52,6 +52,19 @@
         </message>
     </context>
     <context>
+        <name>FollowMeBehavior/behavior.xar:/Say</name>
+        <message>
+            <source>Hello</source>
+            <comment>Text</comment>
+            <translation type="vanished">Hello</translation>
+        </message>
+        <message>
+            <source>Systems operational</source>
+            <comment>Text</comment>
+            <translation type="obsolete">Systems operational</translation>
+        </message>
+    </context>
+    <context>
         <name>behavior_1/behavior.xar:/Come Here Actions/Say</name>
         <message>
             <source>Hot stuff, comin' through!</source>

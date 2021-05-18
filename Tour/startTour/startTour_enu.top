@@ -1,0 +1,16 @@
+topic: ~startTour()
+language: enu
+
+# Defining extra concepts out of words or group of words
+#concept:(hello) [hello hi hey "good morning" greetings]
+
+# Catching inputs and triggering outputs
+#u:(e:onStart) $onStopped=1
+
+# Replying to speech
+#u:(~hello) ~hello
+
+
+u:(ready) Of course Shaurnav. Let's start the tour! $onStopped=1
+
+u:(end tour)

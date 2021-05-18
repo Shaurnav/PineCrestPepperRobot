@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="tour-fb4ede" version="0.0.0">
+ <names>
+  <name lang="en_US">Tour</name>
+ </names>
+ <supportedLanguages>
+  <language>en_US</language>
+ </supportedLanguages>
+ <descriptionLanguages>
+  <language>en_US</language>
+ </descriptionLanguages>
+ <contents>
+  <behaviorContent path="behavior_1">
+   <userRequestable/>
+   <nature>interactive</nature>
+   <permissions/>
+  </behaviorContent>
+  <dialogContent topicName="startTour" typeVersion="1.0">
+   <topic language="en_US" path="startTour/startTour_enu.top"/>
+  </dialogContent>
+  <dialogContent topicName="FollowMe" typeVersion="1.0">
+   <topic language="en_US" path="FollowMe/FollowMe_enu.top"/>
+  </dialogContent>
+  <dialogContent topicName="rooms" typeVersion="1.0">
+   <topic language="en_US" path="rooms/rooms_enu.top"/>
+  </dialogContent>
+ </contents>
+ <requirements>
+  <naoqiRequirement/>
+  <robotRequirement/>
+ </requirements>
+</package>
