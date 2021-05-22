@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<package version="0.0.0" uuid="greeter-b0ce05">
+<package uuid="greeter-b0ce05" version="0.0.0">
  <names>
   <name lang="en_US">Greeter</name>
  </names>
@@ -15,10 +15,10 @@
    <permissions/>
   </behaviorContent>
   <dialogContent typeVersion="1.0" topicName="GreeterDialog">
-   <topic language="en_US" path="GreeterDialog/GreeterDialog_enu.top"/>
+   <topic path="GreeterDialog/GreeterDialog_enu.top" language="en_US"/>
   </dialogContent>
   <dialogContent typeVersion="1.0" topicName="FollowMeDialog">
-   <topic language="en_US" path="FollowMeDialog/FollowMeDialog_enu.top"/>
+   <topic path="FollowMeDialog/FollowMeDialog_enu.top" language="en_US"/>
   </dialogContent>
  </contents>
 </package>
