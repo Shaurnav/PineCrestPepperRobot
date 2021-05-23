@@ -14,7 +14,8 @@ concept:(farewell) [farewell bye "good bye" "see you"]
 
 #Mister Perez
 concept:(perez) [angel perez "computer science" "comp sci" "data structures" "artificial intelligence" "A.I."]
-u:(~perez) Mr. Perez is the teacher of AP Computer Science A, Post-AP Data Structures, and Post-AP Artificial Intelligence. Would you like to go see his room?
+u:(~perez) Mr. Perez teaches AP Computer Science A, Post AP Data Structures and Algorithms, and Post AP Artificial Intelligence.  Students in Mr. Perez's classes have fun learning about object-oriented programming, with emphasis on a growth mindset through explorations of other computer science concepts. He also sponsors the Upper School Computer Science Club which participates in various state and national competitions as well as hosting our own code-a-thons.  I am interacting with you because of all that Mr. Perez's students have learned.
+
 u1:(yes) Okay, let's go! I'm excited to see Mr. Perez. He's really funny. In his AP Computer Science A class, students learn the fundamentals of the Java programming laguage through ten different units. They learn about topics like Strings, Arrays, and ArrayLists. If students love computer science, they can take the next two courses, where they will expand upon topics they learned in AP Computer Science A.
 u1:(no) Alright, maybe another time.
 #Mister Perez Nao Mark

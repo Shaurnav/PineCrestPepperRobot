@@ -84,10 +84,15 @@
     <context>
         <name>behavior_1/behavior.xar:/FollowMe/Come Here Actions/Say</name>
         <message>
-            <location filename="behavior_1/behavior.xar" line="0"/>
             <source>Hot stuff, comin' through!</source>
             <comment>Text</comment>
-            <translation type="unfinished">Hot stuff, comin' through!</translation>
+            <translation type="obsolete">Hot stuff, comin' through!</translation>
+        </message>
+        <message>
+            <location filename="behavior_1/behavior.xar" line="0"/>
+            <source>Ok I will now come to you</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Ok I will now come to you</translation>
         </message>
     </context>
     <context>

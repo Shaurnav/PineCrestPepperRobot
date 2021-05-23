@@ -44,46 +44,41 @@
     <context>
         <name>GreeterBehavior/behavior.xar:/Follow Me/Come Here Actions/Say</name>
         <message>
-            <location filename="GreeterBehavior/behavior.xar" line="0"/>
             <source>Hot stuff, comin' through!</source>
             <comment>Text</comment>
-            <translation type="unfinished">Hot stuff, comin' through!</translation>
+            <translation type="obsolete">Hot stuff, comin' through!</translation>
         </message>
     </context>
     <context>
         <name>GreeterBehavior/behavior.xar:/Follow Me/Come Here Actions/Say (2)</name>
         <message>
-            <location filename="GreeterBehavior/behavior.xar" line="0"/>
             <source>I'm here</source>
             <comment>Text</comment>
-            <translation type="unfinished">I'm here</translation>
+            <translation type="obsolete">I'm here</translation>
         </message>
     </context>
     <context>
         <name>GreeterBehavior/behavior.xar:/Follow Me/FollowActions/Come Here Actions/Say</name>
         <message>
-            <location filename="GreeterBehavior/behavior.xar" line="0"/>
             <source>Hot stuff, comin' through!</source>
             <comment>Text</comment>
-            <translation type="unfinished">Hot stuff, comin' through!</translation>
+            <translation type="obsolete">Hot stuff, comin' through!</translation>
         </message>
     </context>
     <context>
         <name>GreeterBehavior/behavior.xar:/Follow Me/FollowActions/Come Here Actions/Say (2)</name>
         <message>
-            <location filename="GreeterBehavior/behavior.xar" line="0"/>
             <source>I'm here</source>
             <comment>Text</comment>
-            <translation type="unfinished">I'm here</translation>
+            <translation type="obsolete">I'm here</translation>
         </message>
     </context>
     <context>
         <name>GreeterBehavior/behavior.xar:/Follow Me/FollowActions/Say</name>
         <message>
-            <location filename="GreeterBehavior/behavior.xar" line="0"/>
             <source>Here I go!</source>
             <comment>Text</comment>
-            <translation type="unfinished">Here I go!</translation>
+            <translation type="obsolete">Here I go!</translation>
         </message>
     </context>
     <context>
