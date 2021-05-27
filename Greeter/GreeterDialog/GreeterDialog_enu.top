@@ -1,0 +1,42 @@
+topic: ~GreeterDialog()
+language: enu
+
+# Defining extra concepts out of words or group of words
+#concept:(hello) [hello hi hey "good morning" greetings]
+
+# Catching inputs and triggering outputs
+#u:(e:onStart) $onStopped=1
+
+# Replying to speech
+#u:(~hello) ~hello
+
+
+u:(detect) Let's see who this is! $onStopped=1
+
+u:(e:onMarkham) Dr. Markham, President of Pine Crest. $onStopped=1
+
+u:(e:onWalters) Mr. Walters, Head of Upper School. $onStopped=1
+
+u:(e:onHunt) Mrs. Hunt, Director of College and Academic Advising $onStopped=1
+
+u:(e:onOckerman) Mrs. Ockerman, Executive Director of Educational Design and Strategic Initiatives. Also mother of our dear friend Connor. $onStopped=1
+
+u:(e:onGreene) Mrs. Greene, Chief Financial Officer $onStopped=1
+
+u:(e:onTychsen) Dr. Tychsen, Vice President of Academics $onStopped=1
+
+u:(e:onAdam) Adam, a pepper programmer $onStopped=1
+
+u:(e:onShaurnav) Shaurnav, a pepper programmer $onStopped=1
+
+u:(e:onHernandez) Ms. Hernandez, Head of the Math Department $onStopped=1
+
+u:(e:onDefault) Sorry, I don't know this person $onStopped=1
+
+u:(e:onPerez) Mr. Perez, Computer Science Teacher $onStopped=1
+
+u:(e:onEllis) Ellis, a pepper programmer $onStopped=1
+
+u:(e:onJake) Jake, a Jake $onStopped=1
+
+u:(left) I am going to turn left. $onStopped=1

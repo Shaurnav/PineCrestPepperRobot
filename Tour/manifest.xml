@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<package uuid="naomarkdetection-203ed0" version="0.0.0">
+<package uuid="tour-fb4ede" version="0.0.0">
  <names>
-  <name lang="en_US">NaoMarkDetection</name>
+  <name lang="en_US">Tour</name>
  </names>
  <supportedLanguages>
   <language>en_US</language>
@@ -15,11 +15,14 @@
    <nature>interactive</nature>
    <permissions/>
   </behaviorContent>
-  <dialogContent topicName="PresentationTopic" typeVersion="1.0">
-   <topic language="en_US" path="PresentationTopic/PresentationTopic_enu.top"/>
+  <dialogContent topicName="startTour" typeVersion="1.0">
+   <topic language="en_US" path="startTour/startTour_enu.top"/>
   </dialogContent>
-  <dialogContent topicName="where" typeVersion="1.0">
-   <topic language="en_US" path="where/where_enu.top"/>
+  <dialogContent topicName="FollowMe" typeVersion="1.0">
+   <topic language="en_US" path="FollowMe/FollowMe_enu.top"/>
+  </dialogContent>
+  <dialogContent topicName="rooms" typeVersion="1.0">
+   <topic language="en_US" path="rooms/rooms_enu.top"/>
   </dialogContent>
  </contents>
  <requirements>

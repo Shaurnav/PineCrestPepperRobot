@@ -40,10 +40,28 @@
     <context>
         <name>FollowMeBehavior/behavior.xar:/FollowActions/Say</name>
         <message>
-            <location filename="FollowMeBehavior/behavior.xar" line="0"/>
             <source>Say stop to... stop?</source>
             <comment>Text</comment>
-            <translation type="unfinished">Say stop to... stop?</translation>
+            <translation type="obsolete">Say stop to... stop?</translation>
+        </message>
+        <message>
+            <location filename="FollowMeBehavior/behavior.xar" line="0"/>
+            <source>Here I go!</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Here I go!</translation>
+        </message>
+    </context>
+    <context>
+        <name>FollowMeBehavior/behavior.xar:/Say</name>
+        <message>
+            <source>Hello</source>
+            <comment>Text</comment>
+            <translation type="vanished">Hello</translation>
+        </message>
+        <message>
+            <source>Systems operational</source>
+            <comment>Text</comment>
+            <translation type="obsolete">Systems operational</translation>
         </message>
     </context>
     <context>

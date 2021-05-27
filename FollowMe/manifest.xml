@@ -12,11 +12,11 @@
  <contents>
   <behaviorContent path="FollowMeBehavior">
    <nature>interactive</nature>
-   <triggerSentences/>
-   <loadingResponses/>
-   <autonomous/>
    <permissions/>
   </behaviorContent>
+  <dialogContent typeVersion="1.0" topicName="FollowMe">
+   <topic path="FollowMe/FollowMe_enu.top" language="en_US"/>
+  </dialogContent>
  </contents>
  <requirements>
   <naoqiRequirement/>
