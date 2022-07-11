@@ -15,13 +15,13 @@
    <nature>interactive</nature>
    <permissions/>
   </behaviorContent>
-  <dialogContent topicName="startTour" typeVersion="1.0">
+  <dialogContent typeVersion="1.0" topicName="startTour">
    <topic language="en_US" path="startTour/startTour_enu.top"/>
   </dialogContent>
-  <dialogContent topicName="FollowMe" typeVersion="1.0">
+  <dialogContent typeVersion="1.0" topicName="FollowMe">
    <topic language="en_US" path="FollowMe/FollowMe_enu.top"/>
   </dialogContent>
-  <dialogContent topicName="rooms" typeVersion="1.0">
+  <dialogContent typeVersion="1.0" topicName="rooms">
    <topic language="en_US" path="rooms/rooms_enu.top"/>
   </dialogContent>
  </contents>

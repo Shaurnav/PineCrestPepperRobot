@@ -1,0 +1,11 @@
+topic: ~rooms()
+language: enu
+
+
+u:(e:onHernandez) Miss Hernandez is the Math and Computer Science Department Chair.  She teaches AP Calculus B C and AP Calculus A B.  Students in Ms. Hernandez's classes enjoy learning about the theory and application of calculus. Students enjoy solving novel problems using calculus through explorations and a Socratic collaborative learning model.  Ms. Hernandez also sponsors the Math and Theories club and the Indian Heritage class.  Did you know that Ms. Hernandez's students host Brownie Thursdays in her classes? I love brownies!
+ $onStopped=1
+
+u:(e:onPowers) Mr. Powers teaches AP Statistics and AP Calculus A B.  Students in his classes are fascinated with how data can be used to understand the world around them.  They also learn to think critically and creatively by approaching novel problems from multiple perspectives. Students love that he begins every class with an amusing joke of the day. Did you know that Mr. Powers is a Pine Crest Lifer?
+ $onStopped=1
+
+u:(e:onGomez) Mrs. Gomez is the World Languages Department Chair.  She teaches Spanish Four for Native Speakers and AP Spanish Language. Students love honing their language skills and cultural appreciation by actively participating in an immersive learning environment.  Project-based learning and presentations are a staple throughout her classes.  Did you know that Mrs. Gomez is also the sponsor of Pine Crest Yearbook? $onGomezStopped=1

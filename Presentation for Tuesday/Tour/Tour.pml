@@ -11,9 +11,7 @@
         <Dialog name="startTour" src="startTour/startTour.dlg" />
         <Dialog name="rooms" src="rooms/rooms.dlg" />
     </Dialogs>
-    <Resources>
-        <File name="scanner" src="scanner.pmt" />
-    </Resources>
+    <Resources />
     <Topics>
         <Topic name="FollowMe_enu" src="FollowMe/FollowMe_enu.top" topicName="FollowMe" language="en_US" />
         <Topic name="where_enu" src="where/where_enu.top" topicName="where" language="en_US" />

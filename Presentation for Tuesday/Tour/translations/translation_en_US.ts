@@ -129,4 +129,31 @@
             <translation type="unfinished">Here I go!</translation>
         </message>
     </context>
+    <context>
+        <name>behavior_1/behavior.xar:/NaoMarkDetection/FollowMe/Come Here Actions/Say</name>
+        <message>
+            <location filename="behavior_1/behavior.xar" line="0"/>
+            <source>Ok I will now come to you</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Ok I will now come to you</translation>
+        </message>
+    </context>
+    <context>
+        <name>behavior_1/behavior.xar:/NaoMarkDetection/FollowMe/Come Here Actions/Say (2)</name>
+        <message>
+            <location filename="behavior_1/behavior.xar" line="0"/>
+            <source>I'm here</source>
+            <comment>Text</comment>
+            <translation type="unfinished">I'm here</translation>
+        </message>
+    </context>
+    <context>
+        <name>behavior_1/behavior.xar:/NaoMarkDetection/FollowMe/FollowActions/Say</name>
+        <message>
+            <location filename="behavior_1/behavior.xar" line="0"/>
+            <source>Here I go!</source>
+            <comment>Text</comment>
+            <translation type="unfinished">Here I go!</translation>
+        </message>
+    </context>
 </TS>
